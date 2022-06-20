@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FootballPlayerStatsIOS16CDApp: App {
+    @StateObject private var gameDM = GameDataModel(isTesting: true)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GameListView()
+                .environmentObject(gameDM)
         }
     }
 }
