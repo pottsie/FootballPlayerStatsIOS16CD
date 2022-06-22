@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+/*
+ * This form view and the update/add functionality are based on the code developed
+ * and covered by Stewart Lynch on YouTube.
+ *
+ * The form is divided into 4 sections;
+ * 1. General game data
+ * 2. Player data at the game level
+ * 3. Player offensive oriented data
+ * 4. Player defensive oriented data
+ *
+ */
+
 struct GameFormView: View {
     @StateObject var formVM: GameFormViewModel
     @EnvironmentObject private var gameDM: GameDataModel
@@ -81,7 +93,16 @@ extension GameFormView {
     
     var playerGameData: some View {
         Section {
-            //
+            CustomStepperView(title: "Minutes Played", description: "how many minutes were played", upperBound: formVM.newLengthOfGame, lowerBound: 0, step: 1, value: $formVM.newMinutesPlayed)
+            Toggle(isOn: $formVM.newHighlightGame) {
+                Text("Highlight Game")
+                    .font(.headline)
+            }
+            TextEditor(text: $formVM.newNotes)
+                .font(.headline)
+                .foregroundColor(.secondary)
+                .frame(height: 150)
+                .frame(maxWidth: .infinity)
         } header: {
             Text("Player Game Data")
         }
@@ -111,7 +132,10 @@ extension GameFormView {
                        gameType: formVM.newGameType,
                        ourScore: formVM.newOurScore,
                        opponentScore: formVM.newOpponentScore,
-                       lengthOfGame: formVM.newLengthOfGame)
+                       lengthOfGame: formVM.newLengthOfGame,
+                       highlightGame: formVM.newHighlightGame,
+                       notes: formVM.newNotes,
+                       minutesPlayed: formVM.newMinutesPlayed)
     }
     
     private func updateGame() {
@@ -121,7 +145,10 @@ extension GameFormView {
                           gameType: formVM.newGameType,
                           ourScore: formVM.newOurScore,
                           opponentScore: formVM.newOpponentScore,
-                          lengthOfGame: formVM.newLengthOfGame)
+                          lengthOfGame: formVM.newLengthOfGame,
+                          highlightGame: formVM.newHighlightGame,
+                          notes: formVM.newNotes,
+                          minutesPlayed: formVM.newMinutesPlayed)
         
     }
 }

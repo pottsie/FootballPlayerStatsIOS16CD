@@ -48,7 +48,7 @@ final class GameDataModel: ObservableObject {
         }
     }
     
-    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int) {
+    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int) {
         let newGame = GameEntity(context: controller.container.viewContext)
         newGame.opponent_ = opponent
         newGame.dateOfGame_ = dateOfGame
@@ -56,12 +56,16 @@ final class GameDataModel: ObservableObject {
         newGame.opponentScore_ = Int32(opponentScore)
         newGame.lengthOfGame_ = Int32(lengthOfGame)
         newGame.gameType = gameType
+        newGame.highlightGame = highlightGame
+        newGame.minutesPlayed_ = Int32(minutesPlayed)
+        newGame.notes_ = notes
+
         
         saveGames()
         fetchGames()
     }
     
-    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int) {
+    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int) {
         guard let updatedGame = games.first(where: { $0.objectID == id }) else { return }
         updatedGame.opponent_ = opponent
         print(updatedGame.opponent_ ?? "NO TEAM")
@@ -70,6 +74,9 @@ final class GameDataModel: ObservableObject {
         updatedGame.ourScore_ = Int32(ourScore)
         updatedGame.opponentScore_ = Int32(opponentScore)
         updatedGame.lengthOfGame_ = Int32(lengthOfGame)
+        updatedGame.highlightGame = highlightGame
+        updatedGame.notes_ = notes
+        updatedGame.minutesPlayed_ = Int32(minutesPlayed)
         
         saveGames()
         fetchGames()
@@ -85,11 +92,9 @@ final class GameDataModel: ObservableObject {
     // MARK: - User Intents
     
     func toggleHighlightFlag(for game: GameEntity) {
-        let index = games.firstIndex(where: { $0.objectID == game.objectID })!
-//        game.highlightGame.toggle()
-        print("\(games[index].highlightGame)")
-        games[index].highlightGame.toggle()
-        print("\(games[index].highlightGame)")
+//        let index = games.firstIndex(where: { $0.objectID == game.objectID })!
+        game.highlightGame.toggle()
+//        games[index].highlightGame.toggle()
         saveGames()
         fetchGames()
     }
@@ -101,16 +106,22 @@ final class GameDataModel: ObservableObject {
         game1.dateOfGame_ = Date()
         game1.ourScore_ = 2
         game1.opponentScore_ = 1
+        game1.lengthOfGame_ = 80
         game1.gameType_ = 0
         game1.highlightGame = true
+        game1.notes_ = "This was a good game with plenty of offensive chances."
+        game1.minutesPlayed_ = 65
         
         let  game2 = GameEntity(context: controller.container.viewContext)
         game2.opponent_ = "Team with a really long name that won't fit on a single line"
         game2.dateOfGame_ = Date(timeIntervalSinceNow: -1_000_000)
         game2.ourScore_ = 2
         game2.opponentScore_ = 3
+        game2.lengthOfGame_ = 70
         game2.gameType_ = 1
         game2.highlightGame = false
+        game1.notes_ = "Slow, boring game."
+        game1.minutesPlayed_ = 54
 
         do {
             try controller.container.viewContext.save()

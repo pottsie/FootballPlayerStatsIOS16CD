@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/*
+ * View shows the game meta data for use in the game list screen
+ */
+
 struct GameListItemView: View {
     @EnvironmentObject private var gameDM: GameDataModel
     let game: GameEntity
@@ -27,7 +31,7 @@ struct GameListItemView: View {
                 gameType
             }
             Spacer()
-            Text(game.gameResult)
+            game.gameResult
                 .font(.headline)
         }
     }
@@ -42,7 +46,10 @@ struct GameListItemView_Previews: PreviewProvider {
     }
 }
 
+// MARK: - Extensions
 extension GameListItemView {
+    
+    // use the game type enum to switch between views for displaying the type
     var gameType: some View {
         switch game.gameType {
         case .club:

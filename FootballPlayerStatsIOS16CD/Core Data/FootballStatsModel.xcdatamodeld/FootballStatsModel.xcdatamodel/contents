@@ -5,11 +5,13 @@
         <attribute name="gameType_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="highlightGame" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lengthOfGame_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="minutesPlayed_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes_" optional="YES" attributeType="String"/>
         <attribute name="opponent_" optional="YES" attributeType="String"/>
         <attribute name="opponentScore_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="ourScore_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>

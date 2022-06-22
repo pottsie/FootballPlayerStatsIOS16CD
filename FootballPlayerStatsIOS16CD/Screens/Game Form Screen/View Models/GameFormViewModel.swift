@@ -13,9 +13,13 @@ final class GameFormViewModel: ObservableObject {
     @Published var newOpponent: String = ""
     @Published var newOurScore: Int = 0
     @Published var newOpponentScore: Int = 0
-    @Published var newLengthOfGame: Int = 40
+    @Published var newLengthOfGame: Int = 70
     @Published var newGameType: GameType = .club
     @Published var newDateOfGame: Date = Date()
+    
+    @Published var newHighlightGame: Bool = false
+    @Published var newNotes: String = "Game notes."
+    @Published var newMinutesPlayed: Int = 40
         
     var id: NSManagedObjectID?
     
@@ -31,6 +35,9 @@ final class GameFormViewModel: ObservableObject {
         newLengthOfGame = Int(game.lengthOfGame_)
         newGameType = game.gameType
         newDateOfGame = game.dateOfGame_!
+        newHighlightGame = game.highlightGame
+        newNotes = game.notes
+        newMinutesPlayed = Int(game.minutesPlayed_)
         
         id = game.objectID
     }

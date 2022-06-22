@@ -11,6 +11,8 @@
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
 		27584EFC2862A727002085DD /* FormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EFB2862A727002085DD /* FormType.swift */; };
+		27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EFE28635BA2002085DD /* Color+Extension.swift */; };
+		27584F02286373D8002085DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584F01286373D8002085DD /* SettingsView.swift */; };
 		27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */; };
 		27AB24F72860FD2F001E921E /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F62860FD2F001E921E /* GameListView.swift */; };
 		27AB24F92860FD32001E921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24F82860FD32001E921E /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
 		27584EFB2862A727002085DD /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
+		27584EFE28635BA2002085DD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		27584F01286373D8002085DD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballPlayerStatsIOS16CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDApp.swift; sourceTree = "<group>"; };
 		27AB24F62860FD2F001E921E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,22 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		27584EFD28635B78002085DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27584EFE28635BA2002085DD /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		27584F0028637391002085DD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				27584F01286373D8002085DD /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		27AB24E82860FD2F001E921E = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +122,7 @@
 				27AB250D286127BB001E921E /* Screens */,
 				27AB250A286102DB001E921E /* Data Model */,
 				27AB25022860FD5B001E921E /* Core Data */,
+				27584EFD28635B78002085DD /* Extensions */,
 				27AB24F82860FD32001E921E /* Assets.xcassets */,
 				27AB24FA2860FD32001E921E /* Preview Content */,
 			);
@@ -140,6 +161,7 @@
 				27AB251128613DA2001E921E /* HomeScreen.swift */,
 				27584EF228622E57002085DD /* Game Form Screen */,
 				27AB250E286127C4001E921E /* Game List Screen */,
+				27584F0028637391002085DD /* Settings */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -230,11 +252,13 @@
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
 				27AB24F72860FD2F001E921E /* GameListView.swift in Sources */,
 				27AB251228613DA2001E921E /* HomeScreen.swift in Sources */,
+				27584F02286373D8002085DD /* SettingsView.swift in Sources */,
 				27584EFC2862A727002085DD /* FormType.swift in Sources */,
 				27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */,
 				27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */,
 				27AB2510286127E3001E921E /* GameListItemView.swift in Sources */,
 				27AB250C286102F7001E921E /* GameDataModel.swift in Sources */,
+				27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

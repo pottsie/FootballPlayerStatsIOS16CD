@@ -24,7 +24,7 @@ struct HomeScreen: View {
                 .tabItem {
                     Label("Player Profile", systemImage: "person.crop.square")
                 }
-            Text("Settings")
+            SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

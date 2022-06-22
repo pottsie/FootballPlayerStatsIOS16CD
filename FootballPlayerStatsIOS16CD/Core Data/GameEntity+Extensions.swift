@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum GameType: Int32 {
     case club = 0
@@ -20,14 +21,21 @@ extension GameEntity {
         opponent_ ?? "No name"
     }
     
+    var notes: String {
+        notes_ ?? "No game notes."
+    }
+    
     // compute the game winner and return a string with result and score
-    var gameResult: String {
+    var gameResult: some View {
         if ourScore_ > opponentScore_ {
-            return "W \(ourScore_)-\(opponentScore_)"
+            return Text("W \(ourScore_)-\(opponentScore_)")
+                .foregroundColor(.green)
         } else if ourScore_ < opponentScore_ {
-            return "L \(ourScore_)-\(opponentScore_)"
+            return Text("L \(ourScore_)-\(opponentScore_)")
+                .foregroundColor(Color.theme.red)
         } else {
-            return "D \(ourScore_)-\(opponentScore_)"
+            return Text("D \(ourScore_)-\(opponentScore_)")
+                .foregroundColor(.secondary)
         }
     }
     
