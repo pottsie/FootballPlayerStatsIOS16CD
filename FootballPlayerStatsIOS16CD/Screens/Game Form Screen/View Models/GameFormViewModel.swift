@@ -18,4 +18,15 @@ final class GameFormViewModel: ObservableObject {
     
     @Published var isUpdating: Bool = false
     
+    init() { }
+    
+    init(_ game: GameEntity) {
+        newOpponent = game.opponent
+        newOurScore = Int(game.ourScore_)
+        newOpponentScore = Int(game.opponentScore_)
+        newLengthOfGame = Int(game.lengthOfGame_)
+        newGameType = game.gameType
+        newDateOfGame = game.dateOfGame_!
+    }
+    
 }

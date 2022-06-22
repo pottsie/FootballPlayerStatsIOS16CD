@@ -10,6 +10,7 @@
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
+		27584EFC2862A727002085DD /* FormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EFB2862A727002085DD /* FormType.swift */; };
 		27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */; };
 		27AB24F72860FD2F001E921E /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F62860FD2F001E921E /* GameListView.swift */; };
 		27AB24F92860FD32001E921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24F82860FD32001E921E /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
+		27584EFB2862A727002085DD /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
 		27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballPlayerStatsIOS16CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDApp.swift; sourceTree = "<group>"; };
 		27AB24F62860FD2F001E921E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				27584EF92862886B002085DD /* GameFormViewModel.swift */,
+				27584EFB2862A727002085DD /* FormType.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
 				27AB24F72860FD2F001E921E /* GameListView.swift in Sources */,
 				27AB251228613DA2001E921E /* HomeScreen.swift in Sources */,
+				27584EFC2862A727002085DD /* FormType.swift in Sources */,
 				27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */,
 				27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */,
 				27AB2510286127E3001E921E /* GameListItemView.swift in Sources */,

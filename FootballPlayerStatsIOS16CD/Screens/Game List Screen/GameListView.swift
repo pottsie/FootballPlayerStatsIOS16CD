@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameListView: View {
     @EnvironmentObject private var gameDM: GameDataModel
-    @State var showingGameForm: Bool = false
+    @State var formType: FormType?
     
     var body: some View {
         NavigationStack {
@@ -46,15 +46,13 @@ struct GameListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showingGameForm.toggle()
+                        formType = .new
                     } label: {
                         Label("New Game", systemImage: "plus")
                     }
                 }
             }
-            .sheet(isPresented: $showingGameForm) {
-                GameFormView()
-            }
+            .sheet(item: $formType) { $0 }
         }
     }
 }

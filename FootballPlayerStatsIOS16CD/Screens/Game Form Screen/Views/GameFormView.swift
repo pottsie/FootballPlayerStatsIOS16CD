@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameFormView: View {
-    @StateObject private var formVM = GameFormViewModel()
+    @StateObject var formVM: GameFormViewModel
     @EnvironmentObject private var gameDM: GameDataModel
     @Environment(\.dismiss) var dismiss
     
@@ -46,14 +46,14 @@ struct GameFormView: View {
 
 struct GameFormView_Previews: PreviewProvider {
     static var previews: some View {
-        GameFormView()
+        GameFormView(formVM: GameFormViewModel())
             .environmentObject(GameDataModel(isTesting: true))
     }
 }
 
 extension GameFormView {
     
-    //MARK: - computed variables
+    // MARK: - computed variables
     var gameData: some View {
         Section {
             TextField("Opponent", text: $formVM.newOpponent)
