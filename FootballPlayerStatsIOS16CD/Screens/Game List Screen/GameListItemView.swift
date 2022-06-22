@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameListItemView: View {
+    @EnvironmentObject private var gameDM: GameDataModel
     let game: GameEntity
     
     var body: some View {
@@ -35,6 +36,7 @@ struct GameListItemView: View {
 struct GameListItemView_Previews: PreviewProvider {
     static var previews: some View {
         GameListItemView(game: GameDataModel(isTesting: true).games.first!)
+            .environmentObject(GameDataModel(isTesting: true))
             .previewLayout(.sizeThatFits)
             .padding()
     }

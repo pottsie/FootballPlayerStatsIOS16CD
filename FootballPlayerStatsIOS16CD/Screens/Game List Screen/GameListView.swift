@@ -26,6 +26,7 @@ struct GameListView: View {
                         .swipeActions(edge: .leading, allowsFullSwipe: false) {
                             Button {
                                 withAnimation {
+//                                    toggleHighlight(for: game)
                                     gameDM.toggleHighlightFlag(for: game)
                                 }
                             } label: {
@@ -34,6 +35,7 @@ struct GameListView: View {
                             .tint(.blue)
                             Button {
                                 // TODO: - functionality related to editing a game
+                                formType = .update(game)
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
@@ -61,5 +63,13 @@ struct GameListView_Previews: PreviewProvider {
     static var previews: some View {
         GameListView()
             .environmentObject(GameDataModel(isTesting: true))
+    }
+}
+
+extension GameListView {
+    func toggleHighlight(for game: GameEntity) {
+        print(game.highlightGame)
+        game.highlightGame.toggle()
+        print(game.highlightGame)
     }
 }

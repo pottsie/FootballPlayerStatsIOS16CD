@@ -11,6 +11,7 @@ import Foundation
 final class GameDataModel: ObservableObject {
     
     @Published var games: [GameEntity] = []
+    
     var isTesting: Bool = false
     let controller: DataController
     
@@ -32,6 +33,7 @@ final class GameDataModel: ObservableObject {
 
         do {
             games = try controller.container.viewContext.fetch(request)
+            print("GAME DATA LOADED")
         } catch let error {
             print("Error loading game data. \(error.localizedDescription)")
         }
@@ -40,6 +42,7 @@ final class GameDataModel: ObservableObject {
     private func saveGames() {
         do {
             try controller.container.viewContext.save()
+            print("GAME DATA SAVED!")
         } catch {
             print("Error saving games. \(error.localizedDescription)")
         }
@@ -53,6 +56,20 @@ final class GameDataModel: ObservableObject {
         newGame.opponentScore_ = Int32(opponentScore)
         newGame.lengthOfGame_ = Int32(lengthOfGame)
         newGame.gameType = gameType
+        
+        saveGames()
+        fetchGames()
+    }
+    
+    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int) {
+        guard let updatedGame = games.first(where: { $0.objectID == id }) else { return }
+        updatedGame.opponent_ = opponent
+        print(updatedGame.opponent_ ?? "NO TEAM")
+        updatedGame.dateOfGame_ = dateOfGame
+        updatedGame.gameType = gameType
+        updatedGame.ourScore_ = Int32(ourScore)
+        updatedGame.opponentScore_ = Int32(opponentScore)
+        updatedGame.lengthOfGame_ = Int32(lengthOfGame)
         
         saveGames()
         fetchGames()

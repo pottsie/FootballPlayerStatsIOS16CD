@@ -20,7 +20,7 @@ struct GameFormView: View {
                 playerOffensiveData
                 playerDefensiveData
             }
-            .navigationTitle(formVM.isUpdating ? "Update Game" : "New Game")
+            .navigationTitle(formVM.updating ? "Update Game" : "New Game")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -32,10 +32,10 @@ struct GameFormView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        formVM.isUpdating ? updateGame() : addGame()
+                        formVM.updating ? updateGame() : addGame()
                         dismiss()
                     } label: {
-                        Text(formVM.isUpdating ? "Update" : "Add")
+                        Text(formVM.updating ? "Update" : "Add")
                     }
                     .disabled(formVM.newOpponent.isEmpty)
                 }
@@ -115,6 +115,14 @@ extension GameFormView {
     }
     
     private func updateGame() {
+        gameDM.updateGame(id: formVM.id!,
+                          opponent: formVM.newOpponent,
+                          dateOfGame: formVM.newDateOfGame,
+                          gameType: formVM.newGameType,
+                          ourScore: formVM.newOurScore,
+                          opponentScore: formVM.newOpponentScore,
+                          lengthOfGame: formVM.newLengthOfGame)
         
     }
 }
+
