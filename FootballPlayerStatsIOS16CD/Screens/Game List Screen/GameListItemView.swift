@@ -17,7 +17,8 @@ struct GameListItemView: View {
                 .opacity(game.highlightGame ? 1.0 : 0.0)
             VStack(alignment: .leading) {
                 Text(game.opponent)
-                    .font(.headline)
+                    .font(.title3)
+                    .bold()
                     .lineLimit(1)
                 Text(game.dateOfGame)
                     .font(.subheadline)

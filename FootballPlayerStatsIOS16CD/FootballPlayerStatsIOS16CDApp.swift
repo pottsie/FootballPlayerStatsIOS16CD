@@ -13,7 +13,7 @@ struct FootballPlayerStatsIOS16CDApp: App {
     
     var body: some Scene {
         WindowGroup {
-            GameListView()
+            HomeScreen()
                 .environmentObject(gameDM)
         }
     }

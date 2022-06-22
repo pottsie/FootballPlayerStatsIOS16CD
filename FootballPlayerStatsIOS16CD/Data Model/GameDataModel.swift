@@ -45,15 +45,39 @@ final class GameDataModel: ObservableObject {
         }
     }
     
-    func addGame() {
+    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int) {
+        let newGame = GameEntity(context: controller.container.viewContext)
+        newGame.opponent_ = opponent
+        newGame.dateOfGame_ = dateOfGame
+        newGame.ourScore_ = Int32(ourScore)
+        newGame.opponentScore_ = Int32(opponentScore)
+        newGame.lengthOfGame_ = Int32(lengthOfGame)
+        newGame.gameType = gameType
         
+        saveGames()
+        fetchGames()
     }
     
-    func deleteGame() {
-        
+    func deleteGame(_ game: GameEntity) {
+        guard let entity = games.first(where: { $0.objectID == game.objectID }) else { return }
+        controller.container.viewContext.delete(entity)
+        saveGames()
+        fetchGames()
     }
     
-    // MARK: - function that adds mock data for testing
+    // MARK: - User Intents
+    
+    func toggleHighlightFlag(for game: GameEntity) {
+        let index = games.firstIndex(where: { $0.objectID == game.objectID })!
+//        game.highlightGame.toggle()
+        print("\(games[index].highlightGame)")
+        games[index].highlightGame.toggle()
+        print("\(games[index].highlightGame)")
+        saveGames()
+        fetchGames()
+    }
+    
+    // MARK: - function that adds mock data for previews
     private func addMockData() {
         let  game1 = GameEntity(context: controller.container.viewContext)
         game1.opponent_ = "Team A"
