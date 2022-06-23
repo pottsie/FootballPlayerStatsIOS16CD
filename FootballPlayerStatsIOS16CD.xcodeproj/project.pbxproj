@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27250E2D28648FF100A871E2 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E2C28648FF100A871E2 /* ProfileImageView.swift */; };
+		27250E2F2864BC1100A871E2 /* PlayerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E2E2864BC1100A871E2 /* PlayerProfileViewModel.swift */; };
+		27250E312864C7AB00A871E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E302864C7AB00A871E2 /* ProfileView.swift */; };
+		27250E332864DDED00A871E2 /* PlayerEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */; };
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27250E2C28648FF100A871E2 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		27250E2E2864BC1100A871E2 /* PlayerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModel.swift; sourceTree = "<group>"; };
+		27250E302864C7AB00A871E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+Extensions.swift"; sourceTree = "<group>"; };
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
@@ -60,11 +68,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27250E2928648F8E00A871E2 /* Player Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27250E2B28648FC100A871E2 /* Views */,
+				27250E2A28648FB200A871E2 /* View Model */,
+			);
+			path = "Player Profile Screen";
+			sourceTree = "<group>";
+		};
+		27250E2A28648FB200A871E2 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				27250E2E2864BC1100A871E2 /* PlayerProfileViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		27250E2B28648FC100A871E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27250E302864C7AB00A871E2 /* ProfileView.swift */,
+				27250E2C28648FF100A871E2 /* ProfileImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		27584EF228622E57002085DD /* Game Form Screen */ = {
 			isa = PBXGroup;
 			children = (
-				27584EF828628850002085DD /* View Models */,
 				27584EF72862884A002085DD /* Views */,
+				27584EF828628850002085DD /* View Models */,
 			);
 			path = "Game Form Screen";
 			sourceTree = "<group>";
@@ -149,6 +183,7 @@
 				27AB25032860FD7C001E921E /* FootballStatsModel.xcdatamodeld */,
 				27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */,
 				27AB250828610090001E921E /* DataController.swift */,
+				27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -167,6 +202,7 @@
 				27AB251128613DA2001E921E /* HomeScreen.swift */,
 				27584EF228622E57002085DD /* Game Form Screen */,
 				27AB250E286127C4001E921E /* Game List Screen */,
+				27250E2928648F8E00A871E2 /* Player Profile Screen */,
 				27584F0028637391002085DD /* Settings */,
 			);
 			path = Screens;
@@ -252,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AB250928610090001E921E /* DataController.swift in Sources */,
+				27250E332864DDED00A871E2 /* PlayerEntity+Extensions.swift in Sources */,
+				27250E2D28648FF100A871E2 /* ProfileImageView.swift in Sources */,
 				27AB25072860FDEF001E921E /* GameEntity+Extensions.swift in Sources */,
 				27584EF428622F84002085DD /* GameFormView.swift in Sources */,
 				27AB25052860FD7C001E921E /* FootballStatsModel.xcdatamodeld in Sources */,
@@ -265,6 +303,8 @@
 				27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */,
 				27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */,
 				27AB2510286127E3001E921E /* GameListItemView.swift in Sources */,
+				27250E2F2864BC1100A871E2 /* PlayerProfileViewModel.swift in Sources */,
+				27250E312864C7AB00A871E2 /* ProfileView.swift in Sources */,
 				27AB250C286102F7001E921E /* GameDataModel.swift in Sources */,
 				27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */,
 			);

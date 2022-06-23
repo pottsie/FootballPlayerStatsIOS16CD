@@ -11,6 +11,7 @@ import Foundation
 final class GameDataModel: ObservableObject {
     
     @Published var games: [GameEntity] = []
+    @Published var player: PlayerEntity = PlayerEntity()
     
     var isTesting: Bool = false
     let controller: DataController
@@ -20,9 +21,11 @@ final class GameDataModel: ObservableObject {
         if isTesting {
             controller = DataController(inMemory: true)
             addMockData()
+            addMockPlayerData()
         } else {
             controller = DataController(inMemory: false)
             fetchGames()
+            fetchPlayerProfile()
         }
     }
     
@@ -89,6 +92,10 @@ final class GameDataModel: ObservableObject {
         fetchGames()
     }
     
+    private func fetchPlayerProfile() {
+        
+    }
+    
     // MARK: - User Intents
     
     func toggleHighlightFlag(for game: GameEntity) {
@@ -138,5 +145,14 @@ final class GameDataModel: ObservableObject {
             print("Error loading game data. \(error.localizedDescription)")
         }
 
+    }
+    
+    private func addMockPlayerData() {
+        let examplePlayer = PlayerEntity(context: controller.container.viewContext)
+        examplePlayer.firstName_ = "Michael"
+        examplePlayer.lastName_ = "Potts"
+        examplePlayer.dateOfBirth_ = Date()
+        
+        player = examplePlayer
     }
 }

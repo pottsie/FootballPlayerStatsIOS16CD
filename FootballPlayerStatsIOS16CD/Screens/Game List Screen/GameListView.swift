@@ -33,11 +33,7 @@ struct GameListView: View {
                     if gameDM.games.isEmpty {
                         flashingButton
                     } else {
-                        Button {
-                            formType = .new
-                        } label: {
-                            Label("New Game", systemImage: "plus")
-                        }
+                        nonFlashingButton
                     }
                 }
             }
@@ -108,22 +104,31 @@ extension GameListView {
     
     // create a flashing circle around the add game button
     var flashingButton: some View {
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 4.0).foregroundColor(.red)
-                    .frame(width: 25, height: 25)
-                    .scaleEffect(animationAmount)
-                    .opacity(2 - animationAmount)
-                    .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: animationAmount)
-                    .offset(x: 4)
-                Button {
-                    formType = .new
-                } label: {
-                    Label("Add Game", systemImage: "plus")
-                }
-            }
-            .onAppear {
-                animationAmount = 1.5
+        ZStack {
+            Circle()
+                .stroke(lineWidth: 4.0).foregroundColor(.red)
+                .frame(width: 25, height: 25)
+                .scaleEffect(animationAmount)
+                .opacity(2 - animationAmount)
+                .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: animationAmount)
+                .offset(x: 4)
+            Button {
+                formType = .new
+            } label: {
+                Label("Add Game", systemImage: "plus")
             }
         }
+        .onAppear {
+            animationAmount = 1.5
+        }
+    }
+    
+    // plain add game button
+    var nonFlashingButton: some View {
+        Button {
+            formType = .new
+        } label: {
+            Label("New Game", systemImage: "plus")
+        }
+    }
 }

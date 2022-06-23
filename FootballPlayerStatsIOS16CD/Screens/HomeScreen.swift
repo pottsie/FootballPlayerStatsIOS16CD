@@ -21,7 +21,7 @@ struct HomeScreen: View {
                 .tabItem {
                     Label("Player Stats", systemImage: "chart.bar")
                 }
-            Text("Player Profile")
+            ProfileView()
                 .tabItem {
                     Label("Player Profile", systemImage: "person.crop.square")
                 }
