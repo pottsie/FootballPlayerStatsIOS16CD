@@ -9,7 +9,8 @@ import SwiftUI
 
 /*
  * This is the default view when the app launches, and shows a list of all games played, including
- * opponent, date of game, length of game, game type (club/high school), score, and result
+ * opponent, date of game, length of game, game type (club/high school), score, and result. From this
+ * view the user can highlight, edit, delete, or create a new game.
  */
 
 struct GameListView: View {
