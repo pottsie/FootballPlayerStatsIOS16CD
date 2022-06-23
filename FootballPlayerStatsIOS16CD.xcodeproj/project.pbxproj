@@ -13,6 +13,8 @@
 		27584EFC2862A727002085DD /* FormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EFB2862A727002085DD /* FormType.swift */; };
 		27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EFE28635BA2002085DD /* Color+Extension.swift */; };
 		27584F02286373D8002085DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584F01286373D8002085DD /* SettingsView.swift */; };
+		275994D52863E61100A73BD1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D42863E61100A73BD1 /* AboutView.swift */; };
+		275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */; };
 		27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */; };
 		27AB24F72860FD2F001E921E /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F62860FD2F001E921E /* GameListView.swift */; };
 		27AB24F92860FD32001E921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24F82860FD32001E921E /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		27584EFB2862A727002085DD /* FormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormType.swift; sourceTree = "<group>"; };
 		27584EFE28635BA2002085DD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		27584F01286373D8002085DD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		275994D42863E61100A73BD1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballPlayerStatsIOS16CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDApp.swift; sourceTree = "<group>"; };
 		27AB24F62860FD2F001E921E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				27584EFE28635BA2002085DD /* Color+Extension.swift */,
+				275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				27584F01286373D8002085DD /* SettingsView.swift */,
+				275994D42863E61100A73BD1 /* AboutView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -249,7 +255,9 @@
 				27AB25072860FDEF001E921E /* GameEntity+Extensions.swift in Sources */,
 				27584EF428622F84002085DD /* GameFormView.swift in Sources */,
 				27AB25052860FD7C001E921E /* FootballStatsModel.xcdatamodeld in Sources */,
+				275994D52863E61100A73BD1 /* AboutView.swift in Sources */,
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
+				275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */,
 				27AB24F72860FD2F001E921E /* GameListView.swift in Sources */,
 				27AB251228613DA2001E921E /* HomeScreen.swift in Sources */,
 				27584F02286373D8002085DD /* SettingsView.swift in Sources */,
@@ -393,15 +401,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "2022-1";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pottsma.FootballPlayerStatsIOS16CD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,15 +433,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "2022-1";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pottsma.FootballPlayerStatsIOS16CD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct FootballPlayerStatsIOS16CDApp: App {
+    // change the value isTesting to use mock data (true) or on device storage (false)
     @StateObject private var gameDM = GameDataModel(isTesting: true)
     
     var body: some Scene {
