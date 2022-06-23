@@ -11,6 +11,7 @@ struct HomeScreen: View {
     @EnvironmentObject private var gameDM: GameDataModel
     
     var body: some View {
+        // the tab view is the root of the app
         TabView {
             GameListView()
                 .tabItem {
