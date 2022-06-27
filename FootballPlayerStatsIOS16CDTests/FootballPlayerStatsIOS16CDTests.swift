@@ -36,13 +36,17 @@ final class FootballPlayerStatsIOS16CDTests: XCTestCase {
     func test_GameDataModel_CountOfGames_ShouldBeTwo() {
         let gameDM = GameDataModel(isTesting: true)
         
-        XCTAssertEqual(gameDM.games.count, 2)
+        let gamesCount = gameDM.games.count
+        
+        XCTAssertEqual(gamesCount, 2)
     }
     
     func test_GameDataModel_TotalMinutesPlayed_ShouldBe_119() {
         let gameDM = GameDataModel(isTesting: true)
         
-        XCTAssertEqual(gameDM.computeSumFor(.minutesPlayed), 119)
+        let totalMinutesPlayed = gameDM.computeSumFor(.minutesPlayed)
+        
+        XCTAssertEqual(totalMinutesPlayed, 119)
     }
     
     func test_GameDataModel_TeamRecord_ShouldBe_1_1_0() {
@@ -54,5 +58,23 @@ final class FootballPlayerStatsIOS16CDTests: XCTestCase {
         XCTAssertEqual(losses, 1)
         XCTAssertEqual(draws, 0)
     }
+    
+    func test_GameDataModel_HighlightGame_GameIsHighlight() {
+        let gameDM = GameDataModel(isTesting: true)
+        
+        let gameOneHighlightStatus = gameDM.games[0].highlightGame
+        
+        XCTAssertTrue(gameOneHighlightStatus)
+    }
+    
+    func test_GameDataModel_HighlightGame_HighlightIsToggled() {
+        let gameDM = GameDataModel(isTesting: true)
+        
+        gameDM.toggleHighlightFlag(for: gameDM.games[0])
+        let gameOneHighlightStatus = gameDM.games[0].highlightGame
+        
+        XCTAssertFalse(gameOneHighlightStatus)
+    }
+
 
 }

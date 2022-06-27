@@ -22,12 +22,15 @@ struct GameDataCardView: View {
                 titleLeft: "Minutes Played",
                 valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))", 
                 titleRight: "Avg per Game",
-                valueRight: "59.5")
+                valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+            Spacer()
         }
+//        .padding(.vertical)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(.mint.opacity(0.15))
+//        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.secondary, lineWidth: 2))
         .padding()
-        .frame(maxWidth: .infinity)
-        .background(.mint.opacity(0.15))
-        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.black, lineWidth: 2))    }
+    }
 }
 
 struct GameDataCardView_Previews: PreviewProvider {
@@ -35,5 +38,6 @@ struct GameDataCardView_Previews: PreviewProvider {
         GameDataCardView()
             .environmentObject(GameDataModel(isTesting: true))
             .previewLayout(.sizeThatFits)
+            .padding(.vertical)
     }
 }

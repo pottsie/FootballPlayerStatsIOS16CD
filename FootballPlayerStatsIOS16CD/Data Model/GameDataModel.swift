@@ -185,5 +185,12 @@ final class GameDataModel: ObservableObject {
         }
         return (wins, losses, draws)
     }
+    
+    func computeAvgPerGame(for stat: Constants.StatType) -> String {
+        let sumOfStatValue = computeSumFor(stat)
+        let averagePerGame = Double(sumOfStatValue) / Double(games.count)
+        
+        return averagePerGame.asAverageString()
+    }
 }
 
