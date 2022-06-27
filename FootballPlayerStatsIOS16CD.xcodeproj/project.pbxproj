@@ -24,6 +24,7 @@
 		27584F02286373D8002085DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584F01286373D8002085DD /* SettingsView.swift */; };
 		275994D52863E61100A73BD1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D42863E61100A73BD1 /* AboutView.swift */; };
 		275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */; };
+		276DE79128693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */; };
 		27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */; };
 		27AB24F72860FD2F001E921E /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F62860FD2F001E921E /* GameListView.swift */; };
 		27AB24F92860FD32001E921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24F82860FD32001E921E /* Assets.xcassets */; };
@@ -35,6 +36,16 @@
 		27AB2510286127E3001E921E /* GameListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB250F286127E3001E921E /* GameListItemView.swift */; };
 		27AB251228613DA2001E921E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB251128613DA2001E921E /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		276DE79228693C73007CC084 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27AB24E92860FD2F001E921E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27AB24F02860FD2F001E921E;
+			remoteInfo = FootballPlayerStatsIOS16CD;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		27250E2C28648FF100A871E2 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
@@ -54,6 +65,8 @@
 		27584F01286373D8002085DD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		275994D42863E61100A73BD1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		276DE78E28693C73007CC084 /* FootballPlayerStatsIOS16CDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballPlayerStatsIOS16CDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDTests.swift; sourceTree = "<group>"; };
 		27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballPlayerStatsIOS16CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDApp.swift; sourceTree = "<group>"; };
 		27AB24F62860FD2F001E921E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -68,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		276DE78B28693C73007CC084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27AB24EE2860FD2F001E921E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,10 +189,19 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		276DE78F28693C73007CC084 /* FootballPlayerStatsIOS16CDTests */ = {
+			isa = PBXGroup;
+			children = (
+				276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */,
+			);
+			path = FootballPlayerStatsIOS16CDTests;
+			sourceTree = "<group>";
+		};
 		27AB24E82860FD2F001E921E = {
 			isa = PBXGroup;
 			children = (
 				27AB24F32860FD2F001E921E /* FootballPlayerStatsIOS16CD */,
+				276DE78F28693C73007CC084 /* FootballPlayerStatsIOS16CDTests */,
 				27AB24F22860FD2F001E921E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */,
+				276DE78E28693C73007CC084 /* FootballPlayerStatsIOS16CDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +281,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		276DE78D28693C73007CC084 /* FootballPlayerStatsIOS16CDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276DE79628693C73007CC084 /* Build configuration list for PBXNativeTarget "FootballPlayerStatsIOS16CDTests" */;
+			buildPhases = (
+				276DE78A28693C73007CC084 /* Sources */,
+				276DE78B28693C73007CC084 /* Frameworks */,
+				276DE78C28693C73007CC084 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				276DE79328693C73007CC084 /* PBXTargetDependency */,
+			);
+			name = FootballPlayerStatsIOS16CDTests;
+			productName = FootballPlayerStatsIOS16CDTests;
+			productReference = 276DE78E28693C73007CC084 /* FootballPlayerStatsIOS16CDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		27AB24F02860FD2F001E921E /* FootballPlayerStatsIOS16CD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27AB24FF2860FD32001E921E /* Build configuration list for PBXNativeTarget "FootballPlayerStatsIOS16CD" */;
@@ -278,6 +326,10 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					276DE78D28693C73007CC084 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 27AB24F02860FD2F001E921E;
+					};
 					27AB24F02860FD2F001E921E = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -297,11 +349,19 @@
 			projectRoot = "";
 			targets = (
 				27AB24F02860FD2F001E921E /* FootballPlayerStatsIOS16CD */,
+				276DE78D28693C73007CC084 /* FootballPlayerStatsIOS16CDTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		276DE78C28693C73007CC084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27AB24EF2860FD2F001E921E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +374,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		276DE78A28693C73007CC084 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276DE79128693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27AB24ED2860FD2F001E921E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +416,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		276DE79328693C73007CC084 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27AB24F02860FD2F001E921E /* FootballPlayerStatsIOS16CD */;
+			targetProxy = 276DE79228693C73007CC084 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		276DE79428693C73007CC084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WL7FA3UC8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pottsma.FootballPlayerStatsIOS16CDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FootballPlayerStatsIOS16CD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FootballPlayerStatsIOS16CD";
+			};
+			name = Debug;
+		};
+		276DE79528693C73007CC084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WL7FA3UC8X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pottsma.FootballPlayerStatsIOS16CDTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FootballPlayerStatsIOS16CD.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FootballPlayerStatsIOS16CD";
+			};
+			name = Release;
+		};
 		27AB24FD2860FD32001E921E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -530,6 +642,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		276DE79628693C73007CC084 /* Build configuration list for PBXNativeTarget "FootballPlayerStatsIOS16CDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276DE79428693C73007CC084 /* Debug */,
+				276DE79528693C73007CC084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27AB24EC2860FD2F001E921E /* Build configuration list for PBXProject "FootballPlayerStatsIOS16CD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
