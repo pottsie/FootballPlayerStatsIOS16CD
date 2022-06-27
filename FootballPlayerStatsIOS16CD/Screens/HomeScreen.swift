@@ -17,7 +17,7 @@ struct HomeScreen: View {
                 .tabItem {
                     Label("Game List", systemImage: "list.bullet")
                 }
-            Text("Statistical View")
+            StatsHomeScreen()
                 .tabItem {
                     Label("Player Stats", systemImage: "chart.bar")
                 }

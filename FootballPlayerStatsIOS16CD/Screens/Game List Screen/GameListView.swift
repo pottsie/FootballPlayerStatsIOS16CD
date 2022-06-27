@@ -74,14 +74,14 @@ extension GameListView {
                         } label: {
                             Label(game.highlightGame ? "Unflag" : "Flag", systemImage: game.highlightGame ? "star.slash.fill" : "star.fill")
                         }
-                        .tint(.blue)
+                        .tint(Color.theme.primaryText)
                         Button {
                             // TODO: - functionality related to editing a game
                             formType = .update(game)
                         } label: {
                             Label("Edit", systemImage: "pencil")
                         }
-                        .tint(.green)
+                        .tint(.blue)
                     }
             }
         }

@@ -11,6 +11,11 @@
 		27250E2F2864BC1100A871E2 /* PlayerProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E2E2864BC1100A871E2 /* PlayerProfileViewModel.swift */; };
 		27250E312864C7AB00A871E2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E302864C7AB00A871E2 /* ProfileView.swift */; };
 		27250E332864DDED00A871E2 /* PlayerEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */; };
+		27250E4F2865148C00A871E2 /* ProfileInformationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E4E2865148C00A871E2 /* ProfileInformationItemView.swift */; };
+		27250E5128668C9100A871E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E5028668C9100A871E2 /* Constants.swift */; };
+		27250E5428675C4300A871E2 /* StatsHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E5328675C4300A871E2 /* StatsHomeScreen.swift */; };
+		27250E742867D72200A871E2 /* StatCardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E732867D72200A871E2 /* StatCardTitleView.swift */; };
+		27250E772867D9AB00A871E2 /* GameDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27250E762867D9AB00A871E2 /* GameDataCardView.swift */; };
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
@@ -36,6 +41,11 @@
 		27250E2E2864BC1100A871E2 /* PlayerProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModel.swift; sourceTree = "<group>"; };
 		27250E302864C7AB00A871E2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerEntity+Extensions.swift"; sourceTree = "<group>"; };
+		27250E4E2865148C00A871E2 /* ProfileInformationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInformationItemView.swift; sourceTree = "<group>"; };
+		27250E5028668C9100A871E2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27250E5328675C4300A871E2 /* StatsHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHomeScreen.swift; sourceTree = "<group>"; };
+		27250E732867D72200A871E2 /* StatCardTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardTitleView.swift; sourceTree = "<group>"; };
+		27250E762867D9AB00A871E2 /* GameDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataCardView.swift; sourceTree = "<group>"; };
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
@@ -90,8 +100,27 @@
 			children = (
 				27250E302864C7AB00A871E2 /* ProfileView.swift */,
 				27250E2C28648FF100A871E2 /* ProfileImageView.swift */,
+				27250E4E2865148C00A871E2 /* ProfileInformationItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		27250E5228675C2000A871E2 /* Stats Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27250E752867D8DB00A871E2 /* Components */,
+				27250E5328675C4300A871E2 /* StatsHomeScreen.swift */,
+				27250E762867D9AB00A871E2 /* GameDataCardView.swift */,
+			);
+			path = "Stats Screen";
+			sourceTree = "<group>";
+		};
+		27250E752867D8DB00A871E2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				27250E732867D72200A871E2 /* StatCardTitleView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		27584EF228622E57002085DD /* Game Form Screen */ = {
@@ -126,6 +155,7 @@
 			children = (
 				27584EFE28635BA2002085DD /* Color+Extension.swift */,
 				275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */,
+				27250E5028668C9100A871E2 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,6 +232,7 @@
 				27AB251128613DA2001E921E /* HomeScreen.swift */,
 				27584EF228622E57002085DD /* Game Form Screen */,
 				27AB250E286127C4001E921E /* Game List Screen */,
+				27250E5228675C2000A871E2 /* Stats Screen */,
 				27250E2928648F8E00A871E2 /* Player Profile Screen */,
 				27584F0028637391002085DD /* Settings */,
 			);
@@ -288,17 +319,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				27AB250928610090001E921E /* DataController.swift in Sources */,
+				27250E5128668C9100A871E2 /* Constants.swift in Sources */,
 				27250E332864DDED00A871E2 /* PlayerEntity+Extensions.swift in Sources */,
 				27250E2D28648FF100A871E2 /* ProfileImageView.swift in Sources */,
 				27AB25072860FDEF001E921E /* GameEntity+Extensions.swift in Sources */,
 				27584EF428622F84002085DD /* GameFormView.swift in Sources */,
 				27AB25052860FD7C001E921E /* FootballStatsModel.xcdatamodeld in Sources */,
+				27250E4F2865148C00A871E2 /* ProfileInformationItemView.swift in Sources */,
 				275994D52863E61100A73BD1 /* AboutView.swift in Sources */,
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
 				275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */,
 				27AB24F72860FD2F001E921E /* GameListView.swift in Sources */,
 				27AB251228613DA2001E921E /* HomeScreen.swift in Sources */,
+				27250E772867D9AB00A871E2 /* GameDataCardView.swift in Sources */,
 				27584F02286373D8002085DD /* SettingsView.swift in Sources */,
+				27250E742867D72200A871E2 /* StatCardTitleView.swift in Sources */,
 				27584EFC2862A727002085DD /* FormType.swift in Sources */,
 				27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */,
 				27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */,
@@ -306,6 +341,7 @@
 				27250E2F2864BC1100A871E2 /* PlayerProfileViewModel.swift in Sources */,
 				27250E312864C7AB00A871E2 /* ProfileView.swift in Sources */,
 				27AB250C286102F7001E921E /* GameDataModel.swift in Sources */,
+				27250E5428675C4300A871E2 /* StatsHomeScreen.swift in Sources */,
 				27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

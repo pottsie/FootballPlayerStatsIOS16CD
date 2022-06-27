@@ -12,32 +12,29 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 5.0) {
+            VStack(spacing: 2.0) {
                 ProfileImageView(size: 200)
                     .padding(.vertical)
-                Text(gameDM.player.fullName)
+                Text("#4 \(gameDM.player.fullName)")
+                    .foregroundColor(Color.theme.primaryText)
                     .font(.title)
                     .fontWeight(.semibold)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
-//                Text("#4 / #27")
-                Text(gameDM.player.formattedDateOfBirth)
-                HStack {
-                    Text("SCAA Rangers 07")
-                    Spacer()
-                    Text("CDM")
-                }
-                HStack {
-                    Text("South County HS")
-                    Spacer()
-                    Text("CDM")
-                }
-                HStack {
-                    Text("nfl_noah@icloud.com")
-                    Spacer()
-                    Text("703-678-9797")
-                }
-
+                //                Text("#4 / #27")
+                Text("DOB: \(gameDM.player.formattedDateOfBirth)")
+                    .italic()
+                    .foregroundColor(.secondary)
+                Text("Height: 68 in")
+                    .italic()
+                    .foregroundColor(.secondary)
+            }
+            .padding(.bottom)
+            VStack(spacing: 10.0) {
+                ProfileInformationItemView(titleLeft: "Club Team", valueLeft: "SCAA Rangers 07B", titleRight: "Position", valueRight: "CDM")
+                ProfileInformationItemView(titleLeft: "HS Team", valueLeft: "South County", titleRight: "Position", valueRight: "CDM")
+                ProfileInformationItemView(titleLeft: "Email", valueLeft: "nfl_noah@icloud.com", titleRight: "Cell", valueRight: "703-678-9797")
+                
                 Spacer()
             }
             .navigationTitle("Player Profile")

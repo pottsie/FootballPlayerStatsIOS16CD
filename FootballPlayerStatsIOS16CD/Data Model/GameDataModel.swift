@@ -128,7 +128,7 @@ final class GameDataModel: ObservableObject {
         game2.gameType_ = 1
         game2.highlightGame = false
         game1.notes_ = "Slow, boring game."
-        game1.minutesPlayed_ = 54
+        game2.minutesPlayed_ = 54
 
         do {
             try controller.container.viewContext.save()
@@ -155,4 +155,35 @@ final class GameDataModel: ObservableObject {
         
         player = examplePlayer
     }
+    
+    // MARK: - Statistic calculation functions
+    
+    func computeSumFor(_ stat: Constants.StatType) -> Int {
+        var total = 0
+        for game in games {
+            switch stat {
+            case .minutesPlayed:
+                total += Int(game.minutesPlayed_)
+            }
+        }
+        return total
+    }
+    
+    func computeRecord() -> (Int, Int, Int) {
+        var wins: Int = 0
+        var losses: Int = 0
+        var draws: Int = 0
+        
+        for game in games {
+            if game.ourScore_ > game.opponentScore_ {
+                wins += 1
+            } else if game.ourScore_ < game.opponentScore_ {
+                losses += 1
+            } else {
+                draws += 1
+            }
+        }
+        return (wins, losses, draws)
+    }
 }
+

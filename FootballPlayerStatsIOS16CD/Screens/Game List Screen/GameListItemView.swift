@@ -18,10 +18,11 @@ struct GameListItemView: View {
     var body: some View {
         HStack {
             Image(systemName: "star.fill")
-                .foregroundColor(.blue)
+                .foregroundColor(Color.theme.primaryText)
                 .opacity(game.highlightGame ? 1.0 : 0.0)
             VStack(alignment: .leading) {
                 Text(game.opponent)
+                    .foregroundColor(Color.theme.primaryText)
                     .font(.title3)
                     .bold()
                     .lineLimit(1)
