@@ -90,17 +90,6 @@ final class DataViewModel: ObservableObject {
         fetchGames()
     }
     
-    // MARK: - function that adds mock data for previews
-    
-//    private func addMockPlayerData() {
-//        let examplePlayer = PlayerEntity(context: controller.container.viewContext)
-//        examplePlayer.firstName_ = "Michael"
-//        examplePlayer.lastName_ = "Potts"
-//        examplePlayer.dateOfBirth_ = Date()
-//
-//        player = examplePlayer
-//    }
-    
     // MARK: - Statistic calculation functions
     
     func computeSumFor(_ stat: Constants.StatType) -> Int {
