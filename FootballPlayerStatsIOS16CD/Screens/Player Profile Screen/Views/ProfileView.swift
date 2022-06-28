@@ -15,16 +15,16 @@ struct ProfileView: View {
             VStack(spacing: 2.0) {
                 ProfileImageView(size: 200)
                     .padding(.vertical)
-//                Text("#4 \(dataVM.player.fullName)")
-//                    .foregroundColor(Color.theme.primaryText)
-//                    .font(.title)
-//                    .fontWeight(.semibold)
-//                    .lineLimit(2)
-//                    .multilineTextAlignment(.center)
-//                //                Text("#4 / #27")
-//                Text("DOB: \(dataVM.player.formattedDateOfBirth)")
-//                    .italic()
-//                    .foregroundColor(.secondary)
+                Text("#4 \(dataVM.playerProfile.fullName)")
+                    .foregroundColor(Color.theme.primaryText)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                //                Text("#4 / #27")
+                Text("DOB: \(dataVM.playerProfile.formattedDateOfBirth)")
+                    .italic()
+                    .foregroundColor(.secondary)
                 Text("Height: 68 in")
                     .italic()
                     .foregroundColor(.secondary)
@@ -45,7 +45,6 @@ struct ProfileView: View {
                     } label: {
                         Label("Edit Profile", systemImage: "pencil")
                     }
-
                 }
             }
         }

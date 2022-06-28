@@ -32,7 +32,7 @@ final class GameDataModel: ObservableObject {
     
     func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, defensiveDisruptions: Int, clearances: Int) {
         
-        controller.addGame()
+//        controller.addGame()
 //        let newGame = GameEntity(context: controller.container.viewContext)
 //        newGame.opponent_ = opponent
 //        newGame.dateOfGame_ = dateOfGame

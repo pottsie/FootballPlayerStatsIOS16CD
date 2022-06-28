@@ -11,6 +11,7 @@ import Foundation
 final class DataViewModel: ObservableObject {
     
     @Published var games: [GameEntity] = []
+    @Published var playerProfile: PlayerEntity = PlayerEntity()
     
     var dataController: GameDataControllerProtocol
     
@@ -19,10 +20,15 @@ final class DataViewModel: ObservableObject {
         dataController = controller
         
         fetchGames()
+        fetchPlayerProfile()
     }
     
     private func fetchGames() {
         games = dataController.fetchGames()
+    }
+    
+    private func fetchPlayerProfile() {
+        playerProfile = dataController.fetchPlayerProfile()
     }
     
 

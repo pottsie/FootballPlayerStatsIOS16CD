@@ -14,4 +14,5 @@ protocol GameDataControllerProtocol {
     func addGame() -> GameEntity
     func updateGame()
     func saveGames()
+    func fetchPlayerProfile() -> PlayerEntity
 }

@@ -9,6 +9,10 @@ import CoreData
 import Foundation
 
 final class ProductionDataController: GameDataControllerProtocol {
+    func fetchPlayerProfile() -> PlayerEntity {
+        return PlayerEntity()
+    }
+    
     
     var gameData: [GameEntity] = []
     

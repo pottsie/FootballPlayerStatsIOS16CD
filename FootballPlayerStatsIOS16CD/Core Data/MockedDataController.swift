@@ -11,6 +11,7 @@ import Foundation
 final class MockedDataController: GameDataControllerProtocol {
     
     var mockedGameData: [GameEntity] = []
+    var mockedPlayerProfile: PlayerEntity = PlayerEntity()
     
     var container: NSPersistentContainer
     
@@ -23,6 +24,20 @@ final class MockedDataController: GameDataControllerProtocol {
             }
         }
         loadMockData()
+        loadMockPlayerProfile()
+    }
+    
+    private func loadMockPlayerProfile() {
+        let examplePlayer = PlayerEntity(context: container.viewContext)
+        examplePlayer.firstName_ = "Michael"
+        examplePlayer.lastName_ = "Potts"
+        examplePlayer.dateOfBirth_ = Date()
+        
+        do {
+            try container.viewContext.save()
+        } catch {
+            print("Error saving mock data. \(error.localizedDescription)")
+        }
     }
     
     private func loadMockData() {
@@ -104,4 +119,19 @@ final class MockedDataController: GameDataControllerProtocol {
     func saveGames() {
         //
     }
+    
+    func fetchPlayerProfile() -> PlayerEntity {
+                
+        let request = NSFetchRequest<PlayerEntity>(entityName: "PlayerEntity")
+
+        do {
+            mockedPlayerProfile = try container.viewContext.fetch(request).first!
+            return mockedPlayerProfile
+        } catch let error {
+            print("Error loading game data. \(error.localizedDescription)")
+            return mockedPlayerProfile
+        }
+
+    }
+
 }
