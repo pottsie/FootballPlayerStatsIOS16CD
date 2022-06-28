@@ -22,6 +22,7 @@
 		273E0316286B6EC20028EB91 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E0315286B6EC20028EB91 /* Protocols.swift */; };
 		273E0318286B6F470028EB91 /* MockedDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E0317286B6F470028EB91 /* MockedDataController.swift */; };
 		273F940F286B893900DC91AF /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F940E286B893900DC91AF /* DataViewModel.swift */; };
+		273F9411286B949F00DC91AF /* ProductionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9410286B949F00DC91AF /* ProductionDataController.swift */; };
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
@@ -69,6 +70,7 @@
 		273E0315286B6EC20028EB91 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		273E0317286B6F470028EB91 /* MockedDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDataController.swift; sourceTree = "<group>"; };
 		273F940E286B893900DC91AF /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		273F9410286B949F00DC91AF /* ProductionDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionDataController.swift; sourceTree = "<group>"; };
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				27AB250828610090001E921E /* DataController.swift */,
 				27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */,
 				273E0317286B6F470028EB91 /* MockedDataController.swift */,
+				273F9410286B949F00DC91AF /* ProductionDataController.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				273E0318286B6F470028EB91 /* MockedDataController.swift in Sources */,
 				27AB250C286102F7001E921E /* GameDataModel.swift in Sources */,
 				27250E5428675C4300A871E2 /* StatsHomeScreen.swift in Sources */,
+				273F9411286B949F00DC91AF /* ProductionDataController.swift in Sources */,
 				27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

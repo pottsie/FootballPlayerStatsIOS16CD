@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FootballPlayerStatsIOS16CDApp: App {
-    // change the value isTesting to use mock data (true) or on device storage (false)
-//    @StateObject private var gameDM = GameDataModel(isTesting: true)
+    // change the value of the controller from Mocked... to Production... depending
+    // on desired testing
     @StateObject private var dataVM = DataViewModel(controller: MockedDataController())
+//    @StateObject private var dataVM = DataViewModel(controller: MockedDataController())
+
     
     var body: some Scene {
         WindowGroup {

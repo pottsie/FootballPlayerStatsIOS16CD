@@ -94,7 +94,7 @@ final class MockedDataController: GameDataControllerProtocol {
     }
     
     func addGame() -> GameEntity {
-        return GameEntity(context: container.viewContext)
+        GameEntity(context: container.viewContext)
     }
     
     func updateGame() {
