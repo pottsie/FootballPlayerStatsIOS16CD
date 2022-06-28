@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OffensiveStatCard: View {
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     
     var body: some View {
         VStack(spacing: 10.0) {
@@ -16,70 +16,68 @@ struct OffensiveStatCard: View {
             Group {
                 ProfileInformationItemView(
                     titleLeft: "Goals",
-                    valueLeft: "\(gameDM.games.count)",
+                    valueLeft: "\(dataVM.games.count)",
                     titleRight: "Avg per Game",
-                    valueRight: "\(gameDM.computeRecord().0)-\(gameDM.computeRecord().1)-\(gameDM.computeRecord().2)")
+                    valueRight: "\(dataVM.computeRecord().0)-\(dataVM.computeRecord().1)-\(dataVM.computeRecord().2)")
                 ProfileInformationItemView(
                     titleLeft: "Assists",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Shots",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Shots on Goal",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Pass Attempts",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Pass Completions",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
             }
             Group {
                 ProfileInformationItemView(
                     titleLeft: "Dribbles",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Turnovers",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 ProfileInformationItemView(
                     titleLeft: "Headers Won",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: "Avg per Game",
-                    valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
                 Divider()
                 ProfileInformationItemView(
                     titleLeft: "Shot Conversion",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: nil,
                     valueRight: nil)
                 ProfileInformationItemView(
                     titleLeft: "Shooting Accuracy",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: nil,
                     valueRight: nil)
                 ProfileInformationItemView(
                     titleLeft: "Passing Accuracy",
-                    valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))",
+                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                     titleRight: nil,
                     valueRight: nil)
-
             }
-
             Spacer()
         }
         .padding()
@@ -89,7 +87,7 @@ struct OffensiveStatCard: View {
 struct OffensiveStatCard_Previews: PreviewProvider {
     static var previews: some View {
         OffensiveStatCard()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
             .previewLayout(.sizeThatFits)
             .padding(.vertical)
     }

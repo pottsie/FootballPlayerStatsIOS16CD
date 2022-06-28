@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.12" systemVersion="21G5046c" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.12" systemVersion="21G5056b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameEntity" representedClassName="GameEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="clearances_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dateOfGame_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="defensiveDisruptioins_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gameType_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="highlightGame" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lengthOfGame_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -17,7 +19,7 @@
         <attribute name="lastName_" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="194"/>
         <element name="PlayerEntity" positionX="-63" positionY="54" width="128" height="74"/>
     </elements>
 </model>

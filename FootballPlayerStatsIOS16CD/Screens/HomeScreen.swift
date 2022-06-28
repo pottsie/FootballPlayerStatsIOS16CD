@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     
     var body: some View {
         // the tab view is the root of the app
@@ -36,6 +36,6 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreen()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
     }
 }

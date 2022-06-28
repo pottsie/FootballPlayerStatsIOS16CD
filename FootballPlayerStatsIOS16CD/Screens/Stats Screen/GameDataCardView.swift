@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct GameDataCardView: View {
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Game Data")
             ProfileInformationItemView(
                 titleLeft: "Games Played",
-                valueLeft: "\(gameDM.games.count)",
+                valueLeft: "\(dataVM.games.count)",
                 titleRight: "Combined Record",
-                valueRight: "\(gameDM.computeRecord().0)-\(gameDM.computeRecord().1)-\(gameDM.computeRecord().2)")
+                valueRight: "\(dataVM.computeRecord().0)-\(dataVM.computeRecord().1)-\(dataVM.computeRecord().2)")
             ProfileInformationItemView(
                 titleLeft: "Minutes Played",
-                valueLeft: "\(gameDM.computeSumFor(.minutesPlayed))", 
+                valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                 titleRight: "Avg per Game",
-                valueRight: gameDM.computeAvgPerGame(for: .minutesPlayed))
+                valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
+            ProfileInformationItemView(
+                titleLeft: "Goals For",
+                valueLeft: "\(dataVM.computeSumFor(.goalsFor))",
+                titleRight: "Avg per Game",
+                valueRight: dataVM.computeAvgPerGame(for: .goalsFor))
+            ProfileInformationItemView(
+                titleLeft: "Goals Against",
+                valueLeft: "\(dataVM.computeSumFor(.goalsAgainst))",
+                titleRight: "Avg per Game",
+                valueRight: dataVM.computeAvgPerGame(for: .goalsAgainst))
+
             Spacer()
         }
-//        .padding(.vertical)
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(.mint.opacity(0.15))
-//        .overlay(RoundedRectangle(cornerRadius: 10).stroke(.secondary, lineWidth: 2))
         .padding()
     }
 }
@@ -36,7 +43,7 @@ struct GameDataCardView: View {
 struct GameDataCardView_Previews: PreviewProvider {
     static var previews: some View {
         GameDataCardView()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
             .previewLayout(.sizeThatFits)
             .padding(.vertical)
     }

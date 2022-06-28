@@ -14,14 +14,14 @@ import SwiftUI
  */
 
 struct GameListView: View {
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     @State var formType: FormType?
     @State private var animationAmount = 1.0
     
     var body: some View {
         NavigationStack {
             VStack {
-                if gameDM.games.isEmpty {
+                if dataVM.games.isEmpty {
                     noGamesView
                 } else {
                     gameList
@@ -30,7 +30,7 @@ struct GameListView: View {
             .navigationTitle("Games Played")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if gameDM.games.isEmpty {
+                    if dataVM.games.isEmpty {
                         flashingButton
                     } else {
                         nonFlashingButton
@@ -45,7 +45,7 @@ struct GameListView: View {
 struct GameListView_Previews: PreviewProvider {
     static var previews: some View {
         GameListView()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
     }
 }
 
@@ -55,12 +55,12 @@ extension GameListView {
     // If there are games array is not empty, then show the list of games
     var gameList: some View {
         List {
-            ForEach(gameDM.games) { game in
+            ForEach(dataVM.games) { game in
                 GameListItemView(game: game)
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button(role: .destructive) {
                             withAnimation {
-                                gameDM.deleteGame(game)
+                                dataVM.deleteGame(game)
                             }
                         } label: {
                             Label("Delete", systemImage: "trash")
@@ -69,7 +69,7 @@ extension GameListView {
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                         Button {
                             withAnimation {
-                                gameDM.toggleHighlightFlag(for: game)
+                                dataVM.toggleHighlightFlag(for: game)
                             }
                         } label: {
                             Label(game.highlightGame ? "Unflag" : "Flag", systemImage: game.highlightGame ? "star.slash.fill" : "star.fill")

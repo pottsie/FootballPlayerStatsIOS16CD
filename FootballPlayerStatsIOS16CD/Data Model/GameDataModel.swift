@@ -13,62 +13,44 @@ final class GameDataModel: ObservableObject {
     @Published var games: [GameEntity] = []
     @Published var player: PlayerEntity = PlayerEntity()
     
-    var isTesting: Bool = false
-    let controller: DataController
+    var controller: GameDataControllerProtocol
     
-    
-    init(isTesting: Bool) {
-        if isTesting {
-            controller = DataController(inMemory: true)
-            addMockData()
-            addMockPlayerData()
-        } else {
-            controller = DataController(inMemory: false)
-            fetchGames()
-            fetchPlayerProfile()
-        }
+    init(dataController: GameDataControllerProtocol) {
+        controller = dataController
+        
+        fetchGames()
     }
     
     private func fetchGames() {
-        let request = NSFetchRequest<GameEntity>(entityName: "GameEntity")
-        // sort games from newest to oldest
-        request.sortDescriptors = [NSSortDescriptor(key: "dateOfGame_", ascending: false)]
-
-        do {
-            games = try controller.container.viewContext.fetch(request)
-            print("GAME DATA LOADED")
-        } catch let error {
-            print("Error loading game data. \(error.localizedDescription)")
-        }
+        games.removeAll()
+        games = controller.fetchGames()
     }
     
     private func saveGames() {
-        do {
-            try controller.container.viewContext.save()
-            print("GAME DATA SAVED!")
-        } catch {
-            print("Error saving games. \(error.localizedDescription)")
-        }
+        controller.saveGames()
     }
     
-    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int) {
-        let newGame = GameEntity(context: controller.container.viewContext)
-        newGame.opponent_ = opponent
-        newGame.dateOfGame_ = dateOfGame
-        newGame.ourScore_ = Int32(ourScore)
-        newGame.opponentScore_ = Int32(opponentScore)
-        newGame.lengthOfGame_ = Int32(lengthOfGame)
-        newGame.gameType = gameType
-        newGame.highlightGame = highlightGame
-        newGame.minutesPlayed_ = Int32(minutesPlayed)
-        newGame.notes_ = notes
-
+    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, defensiveDisruptions: Int, clearances: Int) {
+        
+        controller.addGame()
+//        let newGame = GameEntity(context: controller.container.viewContext)
+//        newGame.opponent_ = opponent
+//        newGame.dateOfGame_ = dateOfGame
+//        newGame.ourScore_ = Int32(ourScore)
+//        newGame.opponentScore_ = Int32(opponentScore)
+//        newGame.lengthOfGame_ = Int32(lengthOfGame)
+//        newGame.gameType = gameType
+//        newGame.highlightGame = highlightGame
+//        newGame.minutesPlayed_ = Int32(minutesPlayed)
+//        newGame.notes_ = notes
+//        newGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
+//        newGame.clearances_ = Int32(clearances)
         
         saveGames()
         fetchGames()
     }
     
-    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int) {
+    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, defensiveDisruptions: Int, clearances: Int) {
         guard let updatedGame = games.first(where: { $0.objectID == id }) else { return }
         updatedGame.opponent_ = opponent
         print(updatedGame.opponent_ ?? "NO TEAM")
@@ -80,6 +62,8 @@ final class GameDataModel: ObservableObject {
         updatedGame.highlightGame = highlightGame
         updatedGame.notes_ = notes
         updatedGame.minutesPlayed_ = Int32(minutesPlayed)
+        updatedGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
+        updatedGame.clearances_ = Int32(clearances)
         
         saveGames()
         fetchGames()
@@ -87,9 +71,9 @@ final class GameDataModel: ObservableObject {
     
     func deleteGame(_ game: GameEntity) {
         guard let entity = games.first(where: { $0.objectID == game.objectID }) else { return }
-        controller.container.viewContext.delete(entity)
+        controller.deleteGame(entity)
         saveGames()
-        fetchGames()
+//        fetchGames()
     }
     
     private func fetchPlayerProfile() {
@@ -103,58 +87,19 @@ final class GameDataModel: ObservableObject {
         game.highlightGame.toggle()
 //        games[index].highlightGame.toggle()
         saveGames()
-        fetchGames()
+//        fetchGames()
     }
     
     // MARK: - function that adds mock data for previews
-    private func addMockData() {
-        let  game1 = GameEntity(context: controller.container.viewContext)
-        game1.opponent_ = "Team A"
-        game1.dateOfGame_ = Date()
-        game1.ourScore_ = 2
-        game1.opponentScore_ = 1
-        game1.lengthOfGame_ = 80
-        game1.gameType_ = 0
-        game1.highlightGame = true
-        game1.notes_ = "This was a good game with plenty of offensive chances."
-        game1.minutesPlayed_ = 65
-        
-        let  game2 = GameEntity(context: controller.container.viewContext)
-        game2.opponent_ = "Team with a really long name that won't fit on a single line"
-        game2.dateOfGame_ = Date(timeIntervalSinceNow: -1_000_000)
-        game2.ourScore_ = 2
-        game2.opponentScore_ = 3
-        game2.lengthOfGame_ = 70
-        game2.gameType_ = 1
-        game2.highlightGame = false
-        game1.notes_ = "Slow, boring game."
-        game2.minutesPlayed_ = 54
-
-        do {
-            try controller.container.viewContext.save()
-        } catch {
-            print("Error saving mock data. \(error.localizedDescription)")
-        }
-        
-        let request = NSFetchRequest<GameEntity>(entityName: "GameEntity")
-        request.sortDescriptors = [NSSortDescriptor(key: "dateOfGame_", ascending: false)]
-
-        do {
-            games = try controller.container.viewContext.fetch(request)
-        } catch let error {
-            print("Error loading game data. \(error.localizedDescription)")
-        }
-
-    }
     
-    private func addMockPlayerData() {
-        let examplePlayer = PlayerEntity(context: controller.container.viewContext)
-        examplePlayer.firstName_ = "Michael"
-        examplePlayer.lastName_ = "Potts"
-        examplePlayer.dateOfBirth_ = Date()
-        
-        player = examplePlayer
-    }
+//    private func addMockPlayerData() {
+//        let examplePlayer = PlayerEntity(context: controller.container.viewContext)
+//        examplePlayer.firstName_ = "Michael"
+//        examplePlayer.lastName_ = "Potts"
+//        examplePlayer.dateOfBirth_ = Date()
+//
+//        player = examplePlayer
+//    }
     
     // MARK: - Statistic calculation functions
     
@@ -164,6 +109,14 @@ final class GameDataModel: ObservableObject {
             switch stat {
             case .minutesPlayed:
                 total += Int(game.minutesPlayed_)
+            case .goalsFor:
+                total += Int(game.ourScore_)
+            case .goalsAgainst:
+                total += Int(game.opponentScore_)
+            case .defensiveDisruptions:
+                total += Int(game.defensiveDisruptioins_)
+            case .clearances:
+                total += Int(game.clearances_)
             }
         }
         return total

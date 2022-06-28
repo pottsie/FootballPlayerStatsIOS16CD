@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 2.0) {
                 ProfileImageView(size: 200)
                     .padding(.vertical)
-                Text("#4 \(gameDM.player.fullName)")
-                    .foregroundColor(Color.theme.primaryText)
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.center)
-                //                Text("#4 / #27")
-                Text("DOB: \(gameDM.player.formattedDateOfBirth)")
-                    .italic()
-                    .foregroundColor(.secondary)
+//                Text("#4 \(dataVM.player.fullName)")
+//                    .foregroundColor(Color.theme.primaryText)
+//                    .font(.title)
+//                    .fontWeight(.semibold)
+//                    .lineLimit(2)
+//                    .multilineTextAlignment(.center)
+//                //                Text("#4 / #27")
+//                Text("DOB: \(dataVM.player.formattedDateOfBirth)")
+//                    .italic()
+//                    .foregroundColor(.secondary)
                 Text("Height: 68 in")
                     .italic()
                     .foregroundColor(.secondary)
@@ -55,6 +55,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
     }
 }

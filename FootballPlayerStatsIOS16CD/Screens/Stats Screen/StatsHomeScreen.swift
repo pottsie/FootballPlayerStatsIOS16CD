@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct StatsHomeScreen: View {
-    @EnvironmentObject private var gameDM: GameDataModel
-    @State var statViews: [any View] = [GameDataCardView()]
+    @EnvironmentObject private var dataVM: DataViewModel
     
     var body: some View {
         NavigationStack {
             TabView {
-                    GameDataCardView()
-                    OffensiveStatCard()
+                GameDataCardView()
+                OffensiveStatCard()
+                DefensiveStatCard()
             }
             .tabViewStyle(.page)
-//            .padding(.horizontal)
             .navigationTitle("Players Statistics")
         }
     }
@@ -27,6 +26,6 @@ struct StatsHomeScreen: View {
 struct StatsHomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         StatsHomeScreen()
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
     }
 }

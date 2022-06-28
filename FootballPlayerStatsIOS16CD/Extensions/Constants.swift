@@ -10,6 +10,10 @@ import Foundation
 struct Constants {
     
     enum StatType {
+        case goalsFor
+        case goalsAgainst
         case minutesPlayed
+        case defensiveDisruptions
+        case clearances
     }
 }

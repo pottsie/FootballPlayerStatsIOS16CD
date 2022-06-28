@@ -21,7 +21,7 @@ import SwiftUI
 
 struct GameFormView: View {
     @StateObject var formVM: GameFormViewModel
-    @EnvironmentObject private var gameDM: GameDataModel
+    @EnvironmentObject private var dataVM: DataViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -59,7 +59,7 @@ struct GameFormView: View {
 struct GameFormView_Previews: PreviewProvider {
     static var previews: some View {
         GameFormView(formVM: GameFormViewModel())
-            .environmentObject(GameDataModel(isTesting: true))
+            .environmentObject(DataViewModel(controller: MockedDataController()))
     }
 }
 
@@ -118,7 +118,8 @@ extension GameFormView {
     
     var playerDefensiveData: some View {
         Section {
-            //
+            CustomStepperView(title: "Defensive Disruptions", description: "tackles, blocks, interceptions", value: $formVM.defensiveDisruptions)
+            CustomStepperView(title: "Clearances", description: "clear from defensive third", value: $formVM.clearances)
         } header: {
             Text("Player Defensive Data")
         }
@@ -127,7 +128,7 @@ extension GameFormView {
     
     // MARK: - functions
     private func addGame() {
-        gameDM.addGame(opponent: formVM.newOpponent,
+        dataVM.addGame(opponent: formVM.newOpponent,
                        dateOfGame: formVM.newDateOfGame,
                        gameType: formVM.newGameType,
                        ourScore: formVM.newOurScore,
@@ -135,11 +136,13 @@ extension GameFormView {
                        lengthOfGame: formVM.newLengthOfGame,
                        highlightGame: formVM.newHighlightGame,
                        notes: formVM.newNotes,
-                       minutesPlayed: formVM.newMinutesPlayed)
+                       minutesPlayed: formVM.newMinutesPlayed,
+                       defensiveDisruptions: formVM.defensiveDisruptions,
+                       clearances: formVM.clearances)
     }
     
     private func updateGame() {
-        gameDM.updateGame(id: formVM.id!,
+        dataVM.updateGame(id: formVM.id!,
                           opponent: formVM.newOpponent,
                           dateOfGame: formVM.newDateOfGame,
                           gameType: formVM.newGameType,
@@ -148,7 +151,9 @@ extension GameFormView {
                           lengthOfGame: formVM.newLengthOfGame,
                           highlightGame: formVM.newHighlightGame,
                           notes: formVM.newNotes,
-                          minutesPlayed: formVM.newMinutesPlayed)
+                          minutesPlayed: formVM.newMinutesPlayed,
+                          defensiveDisruptions: formVM.defensiveDisruptions,
+                          clearances: formVM.clearances)
         
     }
 }

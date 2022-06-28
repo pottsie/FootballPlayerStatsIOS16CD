@@ -20,6 +20,9 @@ final class GameFormViewModel: ObservableObject {
     @Published var newHighlightGame: Bool = false
     @Published var newNotes: String = "Game notes."
     @Published var newMinutesPlayed: Int = 40
+    
+    @Published var defensiveDisruptions: Int = 0
+    @Published var clearances: Int = 0
         
     var id: NSManagedObjectID?
     
@@ -38,6 +41,8 @@ final class GameFormViewModel: ObservableObject {
         newHighlightGame = game.highlightGame
         newNotes = game.notes
         newMinutesPlayed = Int(game.minutesPlayed_)
+        defensiveDisruptions = Int(game.defensiveDisruptioins_)
+        clearances = Int(game.clearances_)
         
         id = game.objectID
     }
