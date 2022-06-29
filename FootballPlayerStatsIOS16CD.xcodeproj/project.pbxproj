@@ -23,6 +23,10 @@
 		273E0318286B6F470028EB91 /* MockedDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E0317286B6F470028EB91 /* MockedDataController.swift */; };
 		273F940F286B893900DC91AF /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F940E286B893900DC91AF /* DataViewModel.swift */; };
 		273F9411286B949F00DC91AF /* ProductionDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9410286B949F00DC91AF /* ProductionDataController.swift */; };
+		273F9414286C7DE200DC91AF /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9413286C7DE200DC91AF /* Errors.swift */; };
+		273F9417286CA36200DC91AF /* StatCardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9416286CA36200DC91AF /* StatCardItemView.swift */; };
+		273F9419286CA7F700DC91AF /* ScoringDataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9418286CA7F700DC91AF /* ScoringDataCard.swift */; };
+		273F941B286CAA8D00DC91AF /* PassingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F941A286CAA8D00DC91AF /* PassingDataView.swift */; };
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
@@ -38,8 +42,6 @@
 		27AB24FC2860FD32001E921E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24FB2860FD32001E921E /* Preview Assets.xcassets */; };
 		27AB25052860FD7C001E921E /* FootballStatsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27AB25032860FD7C001E921E /* FootballStatsModel.xcdatamodeld */; };
 		27AB25072860FDEF001E921E /* GameEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */; };
-		27AB250928610090001E921E /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB250828610090001E921E /* DataController.swift */; };
-		27AB250C286102F7001E921E /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB250B286102F7001E921E /* GameDataModel.swift */; };
 		27AB2510286127E3001E921E /* GameListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB250F286127E3001E921E /* GameListItemView.swift */; };
 		27AB251228613DA2001E921E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB251128613DA2001E921E /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,10 @@
 		273E0317286B6F470028EB91 /* MockedDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDataController.swift; sourceTree = "<group>"; };
 		273F940E286B893900DC91AF /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		273F9410286B949F00DC91AF /* ProductionDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionDataController.swift; sourceTree = "<group>"; };
+		273F9413286C7DE200DC91AF /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		273F9416286CA36200DC91AF /* StatCardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardItemView.swift; sourceTree = "<group>"; };
+		273F9418286CA7F700DC91AF /* ScoringDataCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringDataCard.swift; sourceTree = "<group>"; };
+		273F941A286CAA8D00DC91AF /* PassingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassingDataView.swift; sourceTree = "<group>"; };
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
@@ -88,8 +94,6 @@
 		27AB24FB2860FD32001E921E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27AB25042860FD7C001E921E /* FootballStatsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootballStatsModel.xcdatamodel; sourceTree = "<group>"; };
 		27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+Extensions.swift"; sourceTree = "<group>"; };
-		27AB250828610090001E921E /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		27AB250B286102F7001E921E /* GameDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataModel.swift; sourceTree = "<group>"; };
 		27AB250F286127E3001E921E /* GameListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListItemView.swift; sourceTree = "<group>"; };
 		27AB251128613DA2001E921E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,9 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				27250E5328675C4300A871E2 /* StatsHomeScreen.swift */,
-				27250E762867D9AB00A871E2 /* GameDataCardView.swift */,
-				273E02CF286A22560028EB91 /* OffensiveStatCard.swift */,
-				273E02D1286A310C0028EB91 /* DefensiveStatCard.swift */,
+				273F9415286C7EEB00DC91AF /* StatCardViews */,
 				27250E752867D8DB00A871E2 /* Components */,
 			);
 			path = "Stats Screen";
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				27250E732867D72200A871E2 /* StatCardTitleView.swift */,
+				273F9416286CA36200DC91AF /* StatCardItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -165,6 +168,26 @@
 				273E0315286B6EC20028EB91 /* Protocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		273F9412286C7DC100DC91AF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				273F9413286C7DE200DC91AF /* Errors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		273F9415286C7EEB00DC91AF /* StatCardViews */ = {
+			isa = PBXGroup;
+			children = (
+				27250E762867D9AB00A871E2 /* GameDataCardView.swift */,
+				273F9418286CA7F700DC91AF /* ScoringDataCard.swift */,
+				273E02CF286A22560028EB91 /* OffensiveStatCard.swift */,
+				273F941A286CAA8D00DC91AF /* PassingDataView.swift */,
+				273E02D1286A310C0028EB91 /* DefensiveStatCard.swift */,
+			);
+			path = StatCardViews;
 			sourceTree = "<group>";
 		};
 		27584EF228622E57002085DD /* Game Form Screen */ = {
@@ -249,6 +272,7 @@
 				27AB25022860FD5B001E921E /* Core Data */,
 				27584EFD28635B78002085DD /* Extensions */,
 				273E0314286B6EB10028EB91 /* Protocols */,
+				273F9412286C7DC100DC91AF /* Utilities */,
 				27AB24F82860FD32001E921E /* Assets.xcassets */,
 				27AB24FA2860FD32001E921E /* Preview Content */,
 			);
@@ -268,7 +292,6 @@
 			children = (
 				27AB25032860FD7C001E921E /* FootballStatsModel.xcdatamodeld */,
 				27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */,
-				27AB250828610090001E921E /* DataController.swift */,
 				27250E322864DDED00A871E2 /* PlayerEntity+Extensions.swift */,
 				273E0317286B6F470028EB91 /* MockedDataController.swift */,
 				273F9410286B949F00DC91AF /* ProductionDataController.swift */,
@@ -279,7 +302,6 @@
 		27AB250A286102DB001E921E /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				27AB250B286102F7001E921E /* GameDataModel.swift */,
 				273F940E286B893900DC91AF /* DataViewModel.swift */,
 			);
 			path = "Data Model";
@@ -415,7 +437,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27AB250928610090001E921E /* DataController.swift in Sources */,
 				27250E5128668C9100A871E2 /* Constants.swift in Sources */,
 				27250E332864DDED00A871E2 /* PlayerEntity+Extensions.swift in Sources */,
 				27250E2D28648FF100A871E2 /* ProfileImageView.swift in Sources */,
@@ -429,9 +450,12 @@
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
 				275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */,
 				27AB24F72860FD2F001E921E /* GameListView.swift in Sources */,
+				273F9414286C7DE200DC91AF /* Errors.swift in Sources */,
 				27AB251228613DA2001E921E /* HomeScreen.swift in Sources */,
 				27250E772867D9AB00A871E2 /* GameDataCardView.swift in Sources */,
 				273E02CE286A08F90028EB91 /* Double+Extensions.swift in Sources */,
+				273F9417286CA36200DC91AF /* StatCardItemView.swift in Sources */,
+				273F941B286CAA8D00DC91AF /* PassingDataView.swift in Sources */,
 				27584F02286373D8002085DD /* SettingsView.swift in Sources */,
 				273E02D2286A310C0028EB91 /* DefensiveStatCard.swift in Sources */,
 				27250E742867D72200A871E2 /* StatCardTitleView.swift in Sources */,
@@ -443,7 +467,7 @@
 				273E0316286B6EC20028EB91 /* Protocols.swift in Sources */,
 				27250E312864C7AB00A871E2 /* ProfileView.swift in Sources */,
 				273E0318286B6F470028EB91 /* MockedDataController.swift in Sources */,
-				27AB250C286102F7001E921E /* GameDataModel.swift in Sources */,
+				273F9419286CA7F700DC91AF /* ScoringDataCard.swift in Sources */,
 				27250E5428675C4300A871E2 /* StatsHomeScreen.swift in Sources */,
 				273F9411286B949F00DC91AF /* ProductionDataController.swift in Sources */,
 				27584EFF28635BA2002085DD /* Color+Extension.swift in Sources */,

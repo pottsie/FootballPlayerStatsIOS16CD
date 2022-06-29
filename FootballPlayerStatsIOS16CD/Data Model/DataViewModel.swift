@@ -15,6 +15,7 @@ final class DataViewModel: ObservableObject {
     
     var dataController: GameDataControllerProtocol
     
+    // MARK: - Initializer - Inject the Data Controller
     init(controller: GameDataControllerProtocol) {
         
         dataController = controller
@@ -45,7 +46,7 @@ final class DataViewModel: ObservableObject {
         fetchGames()
     }
 
-    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, defensiveDisruptions: Int, clearances: Int) {
+    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, defensiveDisruptions: Int, clearances: Int) {
         
         let newGame = dataController.addGame()
         newGame.opponent_ = opponent
@@ -57,6 +58,10 @@ final class DataViewModel: ObservableObject {
         newGame.highlightGame = highlightGame
         newGame.minutesPlayed_ = Int32(minutesPlayed)
         newGame.notes_ = notes
+        newGame.goals_ = Int32(goals)
+        newGame.assists_ = Int32(assists)
+        newGame.shots_ = Int32(shots)
+        newGame.shotsOnGoal_ = Int32(shotsOnGoal)
         newGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
         newGame.clearances_ = Int32(clearances)
         
@@ -64,7 +69,7 @@ final class DataViewModel: ObservableObject {
         fetchGames()
     }
     
-    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, defensiveDisruptions: Int, clearances: Int) {
+    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, defensiveDisruptions: Int, clearances: Int) {
         guard let updatedGame = games.first(where: { $0.objectID == id }) else { return }
         updatedGame.opponent_ = opponent
         print(updatedGame.opponent_ ?? "NO TEAM")
@@ -75,6 +80,10 @@ final class DataViewModel: ObservableObject {
         updatedGame.lengthOfGame_ = Int32(lengthOfGame)
         updatedGame.highlightGame = highlightGame
         updatedGame.notes_ = notes
+        updatedGame.goals_ = Int32(goals)
+        updatedGame.assists_ = Int32(assists)
+        updatedGame.shots_ = Int32(shots)
+        updatedGame.shotsOnGoal_ = Int32(shotsOnGoal)
         updatedGame.minutesPlayed_ = Int32(minutesPlayed)
         updatedGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
         updatedGame.clearances_ = Int32(clearances)
@@ -90,7 +99,7 @@ final class DataViewModel: ObservableObject {
         fetchGames()
     }
     
-    // MARK: - Statistic calculation functions
+    // MARK: - Statistic calculations
     
     func computeSumFor(_ stat: Constants.StatType) -> Int {
         var total = 0
@@ -106,12 +115,20 @@ final class DataViewModel: ObservableObject {
                 total += Int(game.defensiveDisruptioins_)
             case .clearances:
                 total += Int(game.clearances_)
+            case .goals:
+                total += Int(game.goals_)
+            case .assists:
+                total += Int(game.assists_)
+            case .shots:
+                total += Int(game.shots_)
+            case .shotsOnGoal:
+                total += Int(game.shotsOnGoal_)
             }
         }
         return total
     }
     
-    func computeRecord() -> (Int, Int, Int) {
+    func computeRecord() -> (wins: Int, losses: Int, draws: Int) {
         var wins: Int = 0
         var losses: Int = 0
         var draws: Int = 0

@@ -52,6 +52,10 @@ final class MockedDataController: GameDataControllerProtocol {
         game1.highlightGame = true
         game1.notes_ = "This was a good game with plenty of offensive chances."
         game1.minutesPlayed_ = 65
+        game1.goals_ = 1
+        game1.assists_ = 1
+        game1.shots_ = 3
+        game1.shotsOnGoal_ = 1
         game1.defensiveDisruptioins_ = 3
         game1.clearances_ = 2
         
@@ -65,6 +69,10 @@ final class MockedDataController: GameDataControllerProtocol {
         game2.highlightGame = false
         game2.notes_ = "Slow, boring game."
         game2.minutesPlayed_ = 54
+        game2.goals_ = 0
+        game2.assists_ = 1
+        game2.shots_ = 1
+        game2.shotsOnGoal_ = 0
         game2.defensiveDisruptioins_ = 3
         game2.clearances_ = 2
 
@@ -78,6 +86,10 @@ final class MockedDataController: GameDataControllerProtocol {
         game3.highlightGame = false
         game3.notes_ = "Good battle the entire game"
         game3.minutesPlayed_ = 74
+        game3.goals_ = 1
+        game3.assists_ = 0
+        game3.shots_ = 4
+        game3.shotsOnGoal_ = 2
         game3.defensiveDisruptioins_ = 3
         game3.clearances_ = 2
 
@@ -101,7 +113,6 @@ final class MockedDataController: GameDataControllerProtocol {
             print("Error loading game data. \(error.localizedDescription)")
             return []
         }
-
     }
     
     func deleteGame(_ game: GameEntity) {
@@ -117,7 +128,11 @@ final class MockedDataController: GameDataControllerProtocol {
     }
     
     func saveGames() {
-        //
+        do {
+            try container.viewContext.save()
+        } catch let error {
+            print("Error saving game data. \(error.localizedDescription)")
+        }
     }
     
     func fetchPlayerProfile() -> PlayerEntity {
@@ -131,7 +146,5 @@ final class MockedDataController: GameDataControllerProtocol {
             print("Error loading game data. \(error.localizedDescription)")
             return mockedPlayerProfile
         }
-
     }
-
 }

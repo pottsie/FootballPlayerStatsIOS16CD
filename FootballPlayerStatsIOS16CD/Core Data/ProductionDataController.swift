@@ -9,13 +9,8 @@ import CoreData
 import Foundation
 
 final class ProductionDataController: GameDataControllerProtocol {
-    func fetchPlayerProfile() -> PlayerEntity {
-        return PlayerEntity()
-    }
-    
     
     var gameData: [GameEntity] = []
-    
     var container: NSPersistentContainer
     
     init() {
@@ -25,6 +20,10 @@ final class ProductionDataController: GameDataControllerProtocol {
                 print("Error loading persistent stores. \(error.localizedDescription)")
             }
         }
+    }
+    
+    func fetchPlayerProfile() -> PlayerEntity {
+        return PlayerEntity()
     }
 
     func fetchGames() -> [GameEntity] {
@@ -53,6 +52,10 @@ final class ProductionDataController: GameDataControllerProtocol {
     }
     
     func saveGames() {
-        //
+        do {
+            try container.viewContext.save()
+        } catch let error {
+            print("Error saving game data. \(error.localizedDescription)")
+        }
     }
 }

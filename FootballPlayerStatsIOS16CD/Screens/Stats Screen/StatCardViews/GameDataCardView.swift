@@ -17,12 +17,7 @@ struct GameDataCardView: View {
                 titleLeft: "Games Played",
                 valueLeft: "\(dataVM.games.count)",
                 titleRight: "Combined Record",
-                valueRight: "\(dataVM.computeRecord().0)-\(dataVM.computeRecord().1)-\(dataVM.computeRecord().2)")
-            ProfileInformationItemView(
-                titleLeft: "Minutes Played",
-                valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
-                titleRight: "Avg per Game",
-                valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
+                valueRight: "\(dataVM.computeRecord().wins)-\(dataVM.computeRecord().losses)-\(dataVM.computeRecord().draws)")
             ProfileInformationItemView(
                 titleLeft: "Goals For",
                 valueLeft: "\(dataVM.computeSumFor(.goalsFor))",
@@ -33,7 +28,13 @@ struct GameDataCardView: View {
                 valueLeft: "\(dataVM.computeSumFor(.goalsAgainst))",
                 titleRight: "Avg per Game",
                 valueRight: dataVM.computeAvgPerGame(for: .goalsAgainst))
-
+            Divider()
+            ProfileInformationItemView(
+                titleLeft: "Minutes Played",
+                valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
+                titleRight: "Avg per Game",
+                valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
+            
             Spacer()
         }
         .padding()
