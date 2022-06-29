@@ -13,12 +13,37 @@ struct ScoringDataCard: View {
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Scoring Data")
-            StatCardItemView(titleLeft: "Goals", valueLeft: "\(dataVM.computeSumFor(.goals))", titleRight: "Avg per Game", valueRight: "\(dataVM.computeAvgPerGame(for: .goals))")
-            StatCardItemView(titleLeft: "Shots", valueLeft: "\(dataVM.computeSumFor(.shots))", titleRight: "Avg per Game", valueRight: "\(dataVM.computeAvgPerGame(for: .shots))")
-            StatCardItemView(titleLeft: "Shots on Goal", valueLeft: "\(dataVM.computeSumFor(.shotsOnGoal))", titleRight: "Avg per Game", valueRight: "\(dataVM.computeAvgPerGame(for: .shotsOnGoal))")
+            
+            // cummulative and per game average data
+            StatCardItemView(
+                titleLeft: "Goals",
+                valueLeft: "\(dataVM.computeSumFor(.goals))",
+                titleRight: "Avg per Game",
+                valueRight: "\(dataVM.computeAvgPerGame(for: .goals))")
+            StatCardItemView(
+                titleLeft: "Shots",
+                valueLeft: "\(dataVM.computeSumFor(.shots))",
+                titleRight: "Avg per Game",
+                valueRight: "\(dataVM.computeAvgPerGame(for: .shots))")
+            StatCardItemView(
+                titleLeft: "Shots on Goal",
+                valueLeft: "\(dataVM.computeSumFor(.shotsOnGoal))",
+                titleRight: "Avg per Game",
+                valueRight: "\(dataVM.computeAvgPerGame(for: .shotsOnGoal))")
+            
             Divider()
-            StatCardItemView(titleLeft: "Shot Conversion", valueLeft: "12.4%", titleRight: nil, valueRight: nil)
-            StatCardItemView(titleLeft: "Shooting Accuracy", valueLeft: "33.3%", titleRight: nil, valueRight: nil)
+            
+            // computed statistical data
+            StatCardItemView(
+                titleLeft: "Shot Conversion",
+                valueLeft: "12.4%",
+                titleRight: nil,
+                valueRight: nil)
+            StatCardItemView(
+                titleLeft: "Shooting Accuracy",
+                valueLeft: "33.3%",
+                titleRight: nil,
+                valueRight: nil)
 
             Spacer()
         }

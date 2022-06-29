@@ -13,13 +13,14 @@ struct DefensiveStatCard: View {
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Defensive Data")
+            
             Group {
-                ProfileInformationItemView(
+                StatCardItemView(
                     titleLeft: "Defensive Disruptions",
                     valueLeft: "\(dataVM.computeSumFor(.defensiveDisruptions))",
                     titleRight: "Avg per Game",
                     valueRight: dataVM.computeAvgPerGame(for: .defensiveDisruptions))
-                ProfileInformationItemView(
+                StatCardItemView(
                     titleLeft: "Clearances",
                     valueLeft: "\(dataVM.computeSumFor(.clearances))",
                     titleRight: "Avg per Game",

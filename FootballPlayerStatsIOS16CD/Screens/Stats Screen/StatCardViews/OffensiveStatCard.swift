@@ -13,22 +13,24 @@ struct OffensiveStatCard: View {
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Offensive Data")
+            
             Group {
-                ProfileInformationItemView(
+                StatCardItemView(
                     titleLeft: "Dribbles",
-                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
-                    titleRight: "Avg per Game",
-                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
-                ProfileInformationItemView(
+                    valueLeft: "5",
+                    titleRight: "Avg per Games",
+                    valueRight: "1.2")
+                StatCardItemView(
                     titleLeft: "Turnovers",
-                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
-                    titleRight: "Avg per Game",
-                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
-                ProfileInformationItemView(
+                    valueLeft: "5",
+                    titleRight: "Avg per Games",
+                    valueRight: "1.2")
+                StatCardItemView(
                     titleLeft: "Headers Won",
-                    valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
-                    titleRight: "Avg per Game",
-                    valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
+                    valueLeft: "5",
+                    titleRight: "Avg per Games",
+                    valueRight: "1.2")
+
                 Divider()
             }
             Spacer()

@@ -13,28 +13,31 @@ struct GameDataCardView: View {
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Game Data")
-            ProfileInformationItemView(
+            
+            StatCardItemView(
                 titleLeft: "Games Played",
                 valueLeft: "\(dataVM.games.count)",
                 titleRight: "Combined Record",
                 valueRight: "\(dataVM.computeRecord().wins)-\(dataVM.computeRecord().losses)-\(dataVM.computeRecord().draws)")
-            ProfileInformationItemView(
+            StatCardItemView(
                 titleLeft: "Goals For",
                 valueLeft: "\(dataVM.computeSumFor(.goalsFor))",
                 titleRight: "Avg per Game",
-                valueRight: dataVM.computeAvgPerGame(for: .goalsFor))
-            ProfileInformationItemView(
+                valueRight: "\(dataVM.computeAvgPerGame(for: .goalsFor))")
+            StatCardItemView(
                 titleLeft: "Goals Against",
                 valueLeft: "\(dataVM.computeSumFor(.goalsAgainst))",
                 titleRight: "Avg per Game",
-                valueRight: dataVM.computeAvgPerGame(for: .goalsAgainst))
+                valueRight: "\(dataVM.computeAvgPerGame(for: .goalsAgainst))")
+
             Divider()
-            ProfileInformationItemView(
+
+            StatCardItemView(
                 titleLeft: "Minutes Played",
                 valueLeft: "\(dataVM.computeSumFor(.minutesPlayed))",
                 titleRight: "Avg per Game",
-                valueRight: dataVM.computeAvgPerGame(for: .minutesPlayed))
-            
+                valueRight: "\(dataVM.computeAvgPerGame(for: .minutesPlayed))")
+
             Spacer()
         }
         .padding()

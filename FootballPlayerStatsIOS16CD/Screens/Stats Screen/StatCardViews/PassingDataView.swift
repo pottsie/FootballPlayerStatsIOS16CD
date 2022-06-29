@@ -12,11 +12,31 @@ struct PassingDataView: View {
     var body: some View {
         VStack(spacing: 10.0) {
             StatCardTitleView(title: "Passing Data")
-            StatCardItemView(titleLeft: "Assists", valueLeft: "1", titleRight: "Avg per Game", valueRight: "0.32")
-            StatCardItemView(titleLeft: "Pass Attempts", valueLeft: "23", titleRight: "Avg per Game", valueRight: "11.4")
-            StatCardItemView(titleLeft: "Pass Completions", valueLeft: "19", titleRight: "Avg per Game", valueRight: "8.5")
+            
+            StatCardItemView(
+                titleLeft: "Assists",
+                valueLeft: "1",
+                titleRight: "Avg per Game",
+                valueRight: "0.32")
+            StatCardItemView(
+                titleLeft: "Pass Attempts",
+                valueLeft: "23",
+                titleRight: "Avg per Game",
+                valueRight: "11.4")
+            StatCardItemView(
+                titleLeft: "Pass Completions",
+                valueLeft: "19",
+                titleRight: "Avg per Game",
+                valueRight: "8.5")
+            
             Divider()
-            StatCardItemView(titleLeft: "Passing Accuracy", valueLeft: "78.4%", titleRight: nil, valueRight: nil)
+            
+            StatCardItemView(
+                titleLeft: "Passing Accuracy", 
+                valueLeft: "78.4%", 
+                titleRight: nil, 
+                valueRight: nil)
+            
             Spacer()
         }
     }
