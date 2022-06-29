@@ -21,6 +21,11 @@ final class GameFormViewModel: ObservableObject {
     @Published var newNotes: String = "Game notes."
     @Published var newMinutesPlayed: Int = 40
     
+    @Published var newGoals: Int = 0
+    @Published var newAssists: Int = 0
+    @Published var newShots: Int = 0
+    @Published var newShotsOnGoal: Int = 0
+    
     @Published var defensiveDisruptions: Int = 0
     @Published var clearances: Int = 0
         
@@ -41,6 +46,10 @@ final class GameFormViewModel: ObservableObject {
         newHighlightGame = game.highlightGame
         newNotes = game.notes
         newMinutesPlayed = Int(game.minutesPlayed_)
+        newGoals = Int(game.goals_)
+        newAssists = Int(game.assists_)
+        newShots = Int(game.shots_)
+        newShotsOnGoal = Int(game.shotsOnGoal_)
         defensiveDisruptions = Int(game.defensiveDisruptioins_)
         clearances = Int(game.clearances_)
         

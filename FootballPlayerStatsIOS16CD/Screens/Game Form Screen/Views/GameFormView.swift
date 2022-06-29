@@ -110,7 +110,10 @@ extension GameFormView {
     
     var playerOffensiveData: some View {
         Section {
-            //
+            CustomStepperView(title: "Goals", description: "", upperBound: formVM.newOurScore, lowerBound: 0, step: 1, value: $formVM.newGoals)
+            CustomStepperView(title: "Assists", description: "", upperBound: formVM.newOurScore - formVM.newGoals, lowerBound: 0, step: 1, value: $formVM.newAssists)
+            CustomStepperView(title: "Shots", description: "any attempted shot", value: $formVM.newShots)
+            CustomStepperView(title: "Shots on Goal", description: "shot resulting in a goal or save", upperBound: formVM.newShots, lowerBound: 0, step: 1, value: $formVM.newShotsOnGoal)
         } header: {
             Text("Player Offensive Data")
         }
@@ -137,6 +140,10 @@ extension GameFormView {
                        highlightGame: formVM.newHighlightGame,
                        notes: formVM.newNotes,
                        minutesPlayed: formVM.newMinutesPlayed,
+                       goals: formVM.newGoals,
+                       assists: formVM.newAssists,
+                       shots: formVM.newShots,
+                       shotsOnGoal: formVM.newShotsOnGoal,
                        defensiveDisruptions: formVM.defensiveDisruptions,
                        clearances: formVM.clearances)
     }
@@ -152,6 +159,10 @@ extension GameFormView {
                           highlightGame: formVM.newHighlightGame,
                           notes: formVM.newNotes,
                           minutesPlayed: formVM.newMinutesPlayed,
+                          goals: formVM.newGoals,
+                          assists: formVM.newAssists,
+                          shots: formVM.newShots,
+                          shotsOnGoal: formVM.newShotsOnGoal,
                           defensiveDisruptions: formVM.defensiveDisruptions,
                           clearances: formVM.clearances)
         

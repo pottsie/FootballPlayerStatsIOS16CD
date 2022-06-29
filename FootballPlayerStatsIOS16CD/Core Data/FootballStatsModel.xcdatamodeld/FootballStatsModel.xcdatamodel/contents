@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21223.12" systemVersion="21G5056b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameEntity" representedClassName="GameEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="assists_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="clearances_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dateOfGame_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="defensiveDisruptioins_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gameType_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goals_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="highlightGame" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lengthOfGame_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="minutesPlayed_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -12,6 +14,8 @@
         <attribute name="opponent_" optional="YES" attributeType="String"/>
         <attribute name="opponentScore_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="ourScore_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shots_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shotsOnGoal_" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
         <attribute name="dateOfBirth_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -19,7 +23,7 @@
         <attribute name="lastName_" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="194"/>
+        <element name="GameEntity" positionX="-63" positionY="-18" width="128" height="254"/>
         <element name="PlayerEntity" positionX="-63" positionY="54" width="128" height="74"/>
     </elements>
 </model>

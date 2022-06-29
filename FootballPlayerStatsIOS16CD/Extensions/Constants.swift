@@ -13,6 +13,10 @@ struct Constants {
         case goalsFor
         case goalsAgainst
         case minutesPlayed
+        case goals
+        case assists
+        case shots
+        case shotsOnGoal
         case defensiveDisruptions
         case clearances
     }

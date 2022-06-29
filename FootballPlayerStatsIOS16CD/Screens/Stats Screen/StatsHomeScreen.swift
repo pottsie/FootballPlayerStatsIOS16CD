@@ -14,7 +14,9 @@ struct StatsHomeScreen: View {
         NavigationStack {
             TabView {
                 GameDataCardView()
+                ScoringDataCard()
                 OffensiveStatCard()
+                PassingDataView()
                 DefensiveStatCard()
             }
             .tabViewStyle(.page)
