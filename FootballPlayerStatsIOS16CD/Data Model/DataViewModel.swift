@@ -46,7 +46,7 @@ final class DataViewModel: ObservableObject {
         fetchGames()
     }
 
-    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, defensiveDisruptions: Int, clearances: Int) {
+    func addGame(opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, dribbles: Int, turnovers: Int, headersWon: Int, passAttempts: Int, passCompletions: Int, defensiveDisruptions: Int, clearances: Int) {
         
         let newGame = dataController.addGame()
         newGame.opponent_ = opponent
@@ -62,14 +62,20 @@ final class DataViewModel: ObservableObject {
         newGame.assists_ = Int32(assists)
         newGame.shots_ = Int32(shots)
         newGame.shotsOnGoal_ = Int32(shotsOnGoal)
-        newGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
+        newGame.dribbles_ = Int32(dribbles)
+        newGame.turnovers_ = Int32(turnovers)
+        newGame.headersWon_ = Int32(headersWon)
+        newGame.passAttempts_ = Int32(passAttempts)
+        newGame.passCompletions_ = Int32(passCompletions)
+        newGame.defensiveDisruptions_ = Int32(defensiveDisruptions)
         newGame.clearances_ = Int32(clearances)
         
         saveGames()
         fetchGames()
     }
     
-    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, defensiveDisruptions: Int, clearances: Int) {
+    func updateGame(id: NSManagedObjectID, opponent: String, dateOfGame: Date, gameType: GameType, ourScore: Int, opponentScore: Int, lengthOfGame: Int, highlightGame: Bool, notes: String, minutesPlayed: Int, goals: Int, assists: Int, shots: Int, shotsOnGoal: Int, dribbles: Int, turnovers: Int, headersWon: Int, passAttempts: Int, passCompletions: Int, defensiveDisruptions: Int, clearances: Int) {
+        
         guard let updatedGame = games.first(where: { $0.objectID == id }) else { return }
         updatedGame.opponent_ = opponent
         print(updatedGame.opponent_ ?? "NO TEAM")
@@ -85,7 +91,12 @@ final class DataViewModel: ObservableObject {
         updatedGame.shots_ = Int32(shots)
         updatedGame.shotsOnGoal_ = Int32(shotsOnGoal)
         updatedGame.minutesPlayed_ = Int32(minutesPlayed)
-        updatedGame.defensiveDisruptioins_ = Int32(defensiveDisruptions)
+        updatedGame.dribbles_ = Int32(dribbles)
+        updatedGame.turnovers_ = Int32(turnovers)
+        updatedGame.headersWon_ = Int32(headersWon)
+        updatedGame.passAttempts_ = Int32(passAttempts)
+        updatedGame.passCompletions_ = Int32(passCompletions)
+        updatedGame.defensiveDisruptions_ = Int32(defensiveDisruptions)
         updatedGame.clearances_ = Int32(clearances)
         
         saveGames()
@@ -112,7 +123,7 @@ final class DataViewModel: ObservableObject {
             case .goalsAgainst:
                 total += Int(game.opponentScore_)
             case .defensiveDisruptions:
-                total += Int(game.defensiveDisruptioins_)
+                total += Int(game.defensiveDisruptions_)
             case .clearances:
                 total += Int(game.clearances_)
             case .goals:
@@ -123,6 +134,16 @@ final class DataViewModel: ObservableObject {
                 total += Int(game.shots_)
             case .shotsOnGoal:
                 total += Int(game.shotsOnGoal_)
+            case .dribbles:
+                total += Int(game.dribbles_)
+            case .turnovers:
+                total += Int(game.turnovers_)
+            case .headersWon:
+                total += Int(game.headersWon_)
+            case .passAttempts:
+                total += Int(game.passAttempts_)
+            case .passCompletions:
+                total += Int(game.passCompletions_)
             }
         }
         return total
@@ -150,5 +171,14 @@ final class DataViewModel: ObservableObject {
         let averagePerGame = Double(sumOfStatValue) / Double(games.count)
         
         return averagePerGame.asAverageString()
+    }
+    
+    func computePercentageFor(numerator: Constants.StatType, denominator: Constants.StatType) -> String {
+        
+        var percetange: Double
+        
+        percetange = Double(computeSumFor(numerator)) / Double(computeSumFor(denominator))
+        
+        return percetange.asPercentString()
     }
 }

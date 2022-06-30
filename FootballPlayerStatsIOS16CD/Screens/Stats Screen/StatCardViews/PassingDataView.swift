@@ -15,30 +15,31 @@ struct PassingDataView: View {
             
             StatCardItemView(
                 titleLeft: "Assists",
-                valueLeft: "1",
+                valueLeft: "\(dataVM.computeSumFor(.assists))",
                 titleRight: "Avg per Game",
-                valueRight: "0.32")
+                valueRight: "\(dataVM.computeAvgPerGame(for: .assists))")
             StatCardItemView(
                 titleLeft: "Pass Attempts",
-                valueLeft: "23",
+                valueLeft: "\(dataVM.computeSumFor(.passAttempts))",
                 titleRight: "Avg per Game",
-                valueRight: "11.4")
+                valueRight: "\(dataVM.computeAvgPerGame(for: .passAttempts))")
             StatCardItemView(
                 titleLeft: "Pass Completions",
-                valueLeft: "19",
+                valueLeft: "\(dataVM.computeSumFor(.passCompletions))",
                 titleRight: "Avg per Game",
-                valueRight: "8.5")
+                valueRight: "\(dataVM.computeAvgPerGame(for: .passCompletions))")
             
             Divider()
             
             StatCardItemView(
                 titleLeft: "Passing Accuracy", 
-                valueLeft: "78.4%", 
+                valueLeft: dataVM.computePercentageFor(numerator: .passCompletions, denominator: .passAttempts), 
                 titleRight: nil, 
                 valueRight: nil)
             
             Spacer()
         }
+        .padding()
     }
 }
 

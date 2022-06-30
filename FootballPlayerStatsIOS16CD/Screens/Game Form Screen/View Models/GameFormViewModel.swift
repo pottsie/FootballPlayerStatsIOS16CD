@@ -26,8 +26,14 @@ final class GameFormViewModel: ObservableObject {
     @Published var newShots: Int = 0
     @Published var newShotsOnGoal: Int = 0
     
-    @Published var defensiveDisruptions: Int = 0
-    @Published var clearances: Int = 0
+    @Published var newDribbles: Int = 0
+    @Published var newTurnovers: Int = 0
+    @Published var newHeadersWon: Int = 0
+    @Published var newPassAttempts: Int = 0
+    @Published var newPassCompletions: Int = 0
+    
+    @Published var newDefensiveDisruptions: Int = 0
+    @Published var newClearances: Int = 0
         
     var id: NSManagedObjectID?
     
@@ -50,8 +56,13 @@ final class GameFormViewModel: ObservableObject {
         newAssists = Int(game.assists_)
         newShots = Int(game.shots_)
         newShotsOnGoal = Int(game.shotsOnGoal_)
-        defensiveDisruptions = Int(game.defensiveDisruptioins_)
-        clearances = Int(game.clearances_)
+        newDribbles = Int(game.dribbles_)
+        newTurnovers = Int(game.turnovers_)
+        newHeadersWon = Int(game.headersWon_)
+        newPassAttempts = Int(game.passAttempts_)
+        newPassCompletions = Int(game.passCompletions_)
+        newDefensiveDisruptions = Int(game.defensiveDisruptions_)
+        newClearances = Int(game.clearances_)
         
         id = game.objectID
     }

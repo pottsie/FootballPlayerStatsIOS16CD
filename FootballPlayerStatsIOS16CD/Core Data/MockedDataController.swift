@@ -56,8 +56,13 @@ final class MockedDataController: GameDataControllerProtocol {
         game1.assists_ = 1
         game1.shots_ = 3
         game1.shotsOnGoal_ = 1
-        game1.defensiveDisruptioins_ = 3
+        game1.defensiveDisruptions_ = 3
         game1.clearances_ = 2
+        game1.dribbles_ = 4
+        game1.turnovers_ = 1
+        game1.headersWon_ = 2
+        game1.passAttempts_ = 14
+        game1.passCompletions_ = 12
         
         let  game2 = GameEntity(context: container.viewContext)
         game2.opponent_ = "Team with a really long name that won't fit on a single line"
@@ -73,8 +78,13 @@ final class MockedDataController: GameDataControllerProtocol {
         game2.assists_ = 1
         game2.shots_ = 1
         game2.shotsOnGoal_ = 0
-        game2.defensiveDisruptioins_ = 3
+        game2.defensiveDisruptions_ = 3
         game2.clearances_ = 2
+        game2.dribbles_ = 2
+        game2.turnovers_ = 0
+        game2.headersWon_ = 2
+        game2.passAttempts_ = 16
+        game2.passCompletions_ = 13
 
         let  game3 = GameEntity(context: container.viewContext)
         game3.opponent_ = nil
@@ -90,8 +100,13 @@ final class MockedDataController: GameDataControllerProtocol {
         game3.assists_ = 0
         game3.shots_ = 4
         game3.shotsOnGoal_ = 2
-        game3.defensiveDisruptioins_ = 3
+        game3.defensiveDisruptions_ = 3
         game3.clearances_ = 2
+        game3.dribbles_ = 4
+        game3.turnovers_ = 1
+        game3.headersWon_ = 3
+        game3.passAttempts_ = 18
+        game3.passCompletions_ = 16
 
         do {
             try container.viewContext.save()

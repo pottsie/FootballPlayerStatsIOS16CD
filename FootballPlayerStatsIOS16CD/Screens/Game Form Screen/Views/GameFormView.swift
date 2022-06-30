@@ -114,6 +114,11 @@ extension GameFormView {
             CustomStepperView(title: "Assists", description: "", upperBound: formVM.newOurScore - formVM.newGoals, lowerBound: 0, step: 1, value: $formVM.newAssists)
             CustomStepperView(title: "Shots", description: "any attempted shot", value: $formVM.newShots)
             CustomStepperView(title: "Shots on Goal", description: "shot resulting in a goal or save", upperBound: formVM.newShots, lowerBound: 0, step: 1, value: $formVM.newShotsOnGoal)
+            CustomStepperView(title: "Dribbles", description: "beating player 1 v 1", value: $formVM.newDribbles)
+            CustomStepperView(title: "Turnovers", description: "losing ball to opponent", value: $formVM.newTurnovers)
+            CustomStepperView(title: "Headers Won", description: "", value: $formVM.newHeadersWon)
+            CustomStepperView(title: "Pass Attempts", description: "", value: $formVM.newPassAttempts)
+            CustomStepperView(title: "Pass Completions", description: "pass reached teammate", upperBound: formVM.newPassAttempts, lowerBound: 0, step: 1, value: $formVM.newPassCompletions)
         } header: {
             Text("Player Offensive Data")
         }
@@ -121,8 +126,8 @@ extension GameFormView {
     
     var playerDefensiveData: some View {
         Section {
-            CustomStepperView(title: "Defensive Disruptions", description: "tackles, blocks, interceptions", value: $formVM.defensiveDisruptions)
-            CustomStepperView(title: "Clearances", description: "clear from defensive third", value: $formVM.clearances)
+            CustomStepperView(title: "Defensive Disruptions", description: "tackles, blocks, interceptions", value: $formVM.newDefensiveDisruptions)
+            CustomStepperView(title: "Clearances", description: "clear from defensive third", value: $formVM.newClearances)
         } header: {
             Text("Player Defensive Data")
         }
@@ -144,8 +149,13 @@ extension GameFormView {
                        assists: formVM.newAssists,
                        shots: formVM.newShots,
                        shotsOnGoal: formVM.newShotsOnGoal,
-                       defensiveDisruptions: formVM.defensiveDisruptions,
-                       clearances: formVM.clearances)
+                       dribbles: formVM.newDribbles,
+                       turnovers: formVM.newTurnovers,
+                       headersWon: formVM.newHeadersWon,
+                       passAttempts: formVM.newPassAttempts,
+                       passCompletions: formVM.newPassCompletions,
+                       defensiveDisruptions: formVM.newDefensiveDisruptions,
+                       clearances: formVM.newClearances)
     }
     
     private func updateGame() {
@@ -163,8 +173,13 @@ extension GameFormView {
                           assists: formVM.newAssists,
                           shots: formVM.newShots,
                           shotsOnGoal: formVM.newShotsOnGoal,
-                          defensiveDisruptions: formVM.defensiveDisruptions,
-                          clearances: formVM.clearances)
+                          dribbles: formVM.newDribbles,
+                          turnovers: formVM.newTurnovers,
+                          headersWon: formVM.newHeadersWon,
+                          passAttempts: formVM.newPassAttempts,
+                          passCompletions: formVM.newPassCompletions,
+                          defensiveDisruptions: formVM.newDefensiveDisruptions,
+                          clearances: formVM.newClearances)
         
     }
 }

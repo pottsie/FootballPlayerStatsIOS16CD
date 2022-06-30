@@ -17,19 +17,19 @@ struct OffensiveStatCard: View {
             Group {
                 StatCardItemView(
                     titleLeft: "Dribbles",
-                    valueLeft: "5",
+                    valueLeft: "\(dataVM.computeSumFor(.dribbles))",
                     titleRight: "Avg per Games",
-                    valueRight: "1.2")
+                    valueRight: "\(dataVM.computeAvgPerGame(for: .dribbles))")
                 StatCardItemView(
                     titleLeft: "Turnovers",
-                    valueLeft: "5",
+                    valueLeft: "\(dataVM.computeSumFor(.turnovers))",
                     titleRight: "Avg per Games",
-                    valueRight: "1.2")
+                    valueRight: "\(dataVM.computeAvgPerGame(for: .turnovers))")
                 StatCardItemView(
                     titleLeft: "Headers Won",
-                    valueLeft: "5",
+                    valueLeft: "\(dataVM.computeSumFor(.headersWon))",
                     titleRight: "Avg per Games",
-                    valueRight: "1.2")
+                    valueRight: "\(dataVM.computeAvgPerGame(for: .headersWon))")
 
                 Divider()
             }

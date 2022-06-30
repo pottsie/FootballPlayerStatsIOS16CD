@@ -36,12 +36,12 @@ struct ScoringDataCard: View {
             // computed statistical data
             StatCardItemView(
                 titleLeft: "Shot Conversion",
-                valueLeft: "12.4%",
+                valueLeft: dataVM.computePercentageFor(numerator: .goals, denominator: .shots),
                 titleRight: nil,
                 valueRight: nil)
             StatCardItemView(
                 titleLeft: "Shooting Accuracy",
-                valueLeft: "33.3%",
+                valueLeft: dataVM.computePercentageFor(numerator: .shotsOnGoal, denominator: .shots),
                 titleRight: nil,
                 valueRight: nil)
 

@@ -11,10 +11,13 @@ struct StatCardTitleView: View {
     let title: String
     
     var body: some View {
-        Text(title.uppercased())
-            .font(.title3)
-            .foregroundColor(Color.theme.primaryText)
-            .fontWeight(.heavy)
+        HStack {
+            Text(title.uppercased())
+                .font(.title3)
+                .foregroundColor(Color.theme.primaryText)
+                .fontWeight(.heavy)
+            Spacer()
+        }
     }
 }
 

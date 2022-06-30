@@ -17,6 +17,11 @@ struct SettingsView: View {
                         } label: {
                             Label("About", systemImage: "info.circle")
                         }
+                        NavigationLink {
+                            StatDefinitionView()
+                        } label: {
+                            Label("Stat Definitions", systemImage: "info.circle")
+                        }
                     } header: {
                         Text("General")
                     }
