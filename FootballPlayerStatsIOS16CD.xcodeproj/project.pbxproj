@@ -28,6 +28,8 @@
 		273F9419286CA7F700DC91AF /* ScoringDataCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F9418286CA7F700DC91AF /* ScoringDataCard.swift */; };
 		273F941B286CAA8D00DC91AF /* PassingDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273F941A286CAA8D00DC91AF /* PassingDataView.swift */; };
 		27438A8F286DDE4C00547E4D /* StatDefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27438A8E286DDE4C00547E4D /* StatDefinitionView.swift */; };
+		27438AC5286E6B3700547E4D /* DataViewModelTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27438AC4286E6B3700547E4D /* DataViewModelTestClass.swift */; };
+		27438AC7286E6F8500547E4D /* PlayerProfileViewModelTestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27438AC6286E6F8500547E4D /* PlayerProfileViewModelTestClass.swift */; };
 		27584EF428622F84002085DD /* GameFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF328622F84002085DD /* GameFormView.swift */; };
 		27584EF628622FE2002085DD /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF528622FE2002085DD /* CustomStepperView.swift */; };
 		27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584EF92862886B002085DD /* GameFormViewModel.swift */; };
@@ -36,7 +38,6 @@
 		27584F02286373D8002085DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27584F01286373D8002085DD /* SettingsView.swift */; };
 		275994D52863E61100A73BD1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D42863E61100A73BD1 /* AboutView.swift */; };
 		275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */; };
-		276DE79128693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */; };
 		27AB24F52860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */; };
 		27AB24F72860FD2F001E921E /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB24F62860FD2F001E921E /* GameListView.swift */; };
 		27AB24F92860FD32001E921E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27AB24F82860FD32001E921E /* Assets.xcassets */; };
@@ -79,6 +80,8 @@
 		273F9418286CA7F700DC91AF /* ScoringDataCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringDataCard.swift; sourceTree = "<group>"; };
 		273F941A286CAA8D00DC91AF /* PassingDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassingDataView.swift; sourceTree = "<group>"; };
 		27438A8E286DDE4C00547E4D /* StatDefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatDefinitionView.swift; sourceTree = "<group>"; };
+		27438AC4286E6B3700547E4D /* DataViewModelTestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModelTestClass.swift; sourceTree = "<group>"; };
+		27438AC6286E6F8500547E4D /* PlayerProfileViewModelTestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileViewModelTestClass.swift; sourceTree = "<group>"; };
 		27584EF328622F84002085DD /* GameFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormView.swift; sourceTree = "<group>"; };
 		27584EF528622FE2002085DD /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		27584EF92862886B002085DD /* GameFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFormViewModel.swift; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 		275994D42863E61100A73BD1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		275994D62863E7B900A73BD1 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		276DE78E28693C73007CC084 /* FootballPlayerStatsIOS16CDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballPlayerStatsIOS16CDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDTests.swift; sourceTree = "<group>"; };
 		27AB24F12860FD2F001E921E /* FootballPlayerStatsIOS16CD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballPlayerStatsIOS16CD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27AB24F42860FD2F001E921E /* FootballPlayerStatsIOS16CDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballPlayerStatsIOS16CDApp.swift; sourceTree = "<group>"; };
 		27AB24F62860FD2F001E921E /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
@@ -243,7 +245,8 @@
 		276DE78F28693C73007CC084 /* FootballPlayerStatsIOS16CDTests */ = {
 			isa = PBXGroup;
 			children = (
-				276DE79028693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift */,
+				27438AC4286E6B3700547E4D /* DataViewModelTestClass.swift */,
+				27438AC6286E6F8500547E4D /* PlayerProfileViewModelTestClass.swift */,
 			);
 			path = FootballPlayerStatsIOS16CDTests;
 			sourceTree = "<group>";
@@ -432,7 +435,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276DE79128693C73007CC084 /* FootballPlayerStatsIOS16CDTests.swift in Sources */,
+				27438AC7286E6F8500547E4D /* PlayerProfileViewModelTestClass.swift in Sources */,
+				27438AC5286E6B3700547E4D /* DataViewModelTestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
