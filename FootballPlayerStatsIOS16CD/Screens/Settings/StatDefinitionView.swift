@@ -11,13 +11,13 @@ struct StatDefinitionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
             List {
-                ForEach(StatDefinitions.statDefinitions) { definition in
+                ForEach(Constants.definitions.sorted(by: <), id: \.key) { stat, definition in
                     HStack(alignment: .center) {
-                        Text(definition.stat)
+                        Text(stat)
                             .bold()
                             .frame(width: 70.0, alignment: .leading)
                         Spacer()
-                        Text(definition.definition)
+                        Text(definition)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
