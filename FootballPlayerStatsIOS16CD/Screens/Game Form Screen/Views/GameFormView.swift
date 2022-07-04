@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-/*
- * This form view and the update/add functionality are based on the code developed
- * and covered by Stewart Lynch on YouTube.
- *
- * The form is divided into 4 sections;
- * 1. General game data
- * 2. Player data at the game level
- * 3. Player offensive oriented data
- * 4. Player defensive oriented data
- *
- */
+//
+// This form view and the update/add functionality are based on the code developed
+// and covered by Stewart Lynch on YouTube.
+//
+// The form is divided into 4 sections;
+// 1. General game data
+// 2. Player data at the game level
+// 3. Player offensive oriented data
+// 4. Player defensive oriented data
+//
 
 struct GameFormView: View {
     @StateObject var formVM: GameFormViewModel
@@ -83,8 +82,8 @@ extension GameFormView {
                     .font(.headline)
             }
             .pickerStyle(.segmented)
-            CustomStepperView(title: "Our Score", description: "", value: $formVM.newOurScore)
-            CustomStepperView(title: "Opponent Score", description: "", value: $formVM.newOpponentScore)
+            CustomStepperView(title: "Our Score", value: $formVM.newOurScore)
+            CustomStepperView(title: "Opponent Score", value: $formVM.newOpponentScore)
             CustomStepperView(title: "Game Length", description: "duration in minutes", upperBound: 90, lowerBound: 40, step: 10, value: $formVM.newLengthOfGame)
         } header: {
             Text("Game Data")
@@ -110,14 +109,14 @@ extension GameFormView {
     
     var playerOffensiveData: some View {
         Section {
-            CustomStepperView(title: "Goals", description: "", upperBound: formVM.newOurScore, lowerBound: 0, step: 1, value: $formVM.newGoals)
-            CustomStepperView(title: "Assists", description: "", upperBound: formVM.newOurScore - formVM.newGoals, lowerBound: 0, step: 1, value: $formVM.newAssists)
+            CustomStepperView(title: "Goals", upperBound: formVM.newOurScore, lowerBound: 0, step: 1, value: $formVM.newGoals)
+            CustomStepperView(title: "Assists", upperBound: formVM.newOurScore - formVM.newGoals, lowerBound: 0, step: 1, value: $formVM.newAssists)
             CustomStepperView(title: "Shots", description: "any attempted shot", value: $formVM.newShots)
             CustomStepperView(title: "Shots on Goal", description: "shot resulting in a goal or save", upperBound: formVM.newShots, lowerBound: 0, step: 1, value: $formVM.newShotsOnGoal)
             CustomStepperView(title: "Dribbles", description: "beating player 1 v 1", value: $formVM.newDribbles)
             CustomStepperView(title: "Turnovers", description: "losing ball to opponent", value: $formVM.newTurnovers)
-            CustomStepperView(title: "Headers Won", description: "", value: $formVM.newHeadersWon)
-            CustomStepperView(title: "Pass Attempts", description: "", value: $formVM.newPassAttempts)
+            CustomStepperView(title: "Headers Won", value: $formVM.newHeadersWon)
+            CustomStepperView(title: "Pass Attempts", value: $formVM.newPassAttempts)
             CustomStepperView(title: "Pass Completions", description: "pass reached teammate", upperBound: formVM.newPassAttempts, lowerBound: 0, step: 1, value: $formVM.newPassCompletions)
         } header: {
             Text("Player Offensive Data")

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-/*
- * View shows the game meta data for use in the game list screen
- */
+//
+// View shows the game meta data for use in the game list screen
+//
 
 struct GameListItemView: View {
     @EnvironmentObject private var dataVM: DataViewModel

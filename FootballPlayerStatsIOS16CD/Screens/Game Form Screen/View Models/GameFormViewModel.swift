@@ -10,6 +10,7 @@ import Foundation
 
 final class GameFormViewModel: ObservableObject {
     
+    // initialize published variables for using in the game form
     @Published var newOpponent: String = ""
     @Published var newOurScore: Int = 0
     @Published var newOpponentScore: Int = 0

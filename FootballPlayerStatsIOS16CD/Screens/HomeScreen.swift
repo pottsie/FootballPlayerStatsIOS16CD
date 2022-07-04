@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+//
+// Home view for the app. There are 4 tabs, for the game list, statistics views,
+// player profile view, and the settings view. The default view is the game list.
+//
+
 struct HomeScreen: View {
     @EnvironmentObject private var dataVM: DataViewModel
     

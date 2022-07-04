@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+//
+// Display a list of statistics tracked by the program and
+// there definition, as used in this app.
+//
+
 struct StatDefinitionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
             List {
+                // loop through the dictionary of stats and display a
+                // definition for each
                 ForEach(Constants.definitions.sorted(by: <), id: \.key) { stat, definition in
                     HStack(alignment: .center) {
                         Text(stat)
@@ -27,7 +34,7 @@ struct StatDefinitionView: View {
         }
         .font(.caption)
         .padding(.horizontal)
-        .navigationTitle("Stat Definitions")
+        .navigationTitle("Player Stat Definitions")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
