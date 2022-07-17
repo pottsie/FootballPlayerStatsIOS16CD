@@ -46,6 +46,7 @@
 		27AB25072860FDEF001E921E /* GameEntity+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */; };
 		27AB2510286127E3001E921E /* GameListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB250F286127E3001E921E /* GameListItemView.swift */; };
 		27AB251228613DA2001E921E /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AB251128613DA2001E921E /* HomeScreen.swift */; };
+		27F698FC28766F9E00AE5E44 /* GameShareScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F698FB28766F9E00AE5E44 /* GameShareScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		27AB25062860FDEF001E921E /* GameEntity+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameEntity+Extensions.swift"; sourceTree = "<group>"; };
 		27AB250F286127E3001E921E /* GameListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListItemView.swift; sourceTree = "<group>"; };
 		27AB251128613DA2001E921E /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		27F698FB28766F9E00AE5E44 /* GameShareScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameShareScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 				27AB251128613DA2001E921E /* HomeScreen.swift */,
 				27584EF228622E57002085DD /* Game Form Screen */,
 				27AB250E286127C4001E921E /* Game List Screen */,
+				27F698FA28766EF200AE5E44 /* Game Share Screen */,
 				27250E5228675C2000A871E2 /* Stats Screen */,
 				27250E2928648F8E00A871E2 /* Player Profile Screen */,
 				27584F0028637391002085DD /* Settings */,
@@ -333,6 +336,14 @@
 				27AB250F286127E3001E921E /* GameListItemView.swift */,
 			);
 			path = "Game List Screen";
+			sourceTree = "<group>";
+		};
+		27F698FA28766EF200AE5E44 /* Game Share Screen */ = {
+			isa = PBXGroup;
+			children = (
+				27F698FB28766F9E00AE5E44 /* GameShareScreen.swift */,
+			);
+			path = "Game Share Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +464,7 @@
 				27AB25052860FD7C001E921E /* FootballStatsModel.xcdatamodeld in Sources */,
 				27250E4F2865148C00A871E2 /* ProfileInformationItemView.swift in Sources */,
 				275994D52863E61100A73BD1 /* AboutView.swift in Sources */,
+				27F698FC28766F9E00AE5E44 /* GameShareScreen.swift in Sources */,
 				273F940F286B893900DC91AF /* DataViewModel.swift in Sources */,
 				27584EFA2862886B002085DD /* GameFormViewModel.swift in Sources */,
 				275994D72863E7B900A73BD1 /* UIApplication+Extensions.swift in Sources */,

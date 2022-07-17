@@ -20,18 +20,18 @@ struct SettingsView: View {
                         NavigationLink {
                             StatDefinitionView()
                         } label: {
-                            Label("Stat Definitions", systemImage: "info.circle")
+                            Label("Stat Definitions", systemImage: "questionmark.circle")
                         }
                     } header: {
                         Text("General")
                     }
                     Section {
-                        Button {
-                            // TODO: - Function for importing JSON data
-                            print("Import game data from json file")
-                        } label: {
-                            Label("Import Game Data (JSON)", systemImage: "arrow.down.circle")
-                        }
+//                        Button {
+//                            // TODO: - Function for importing JSON data
+//                            print("Import game data from json file")
+//                        } label: {
+//                            Label("Import Game Data (JSON)", systemImage: "arrow.down.circle")
+//                        }
                         Button {
                             // TODO: - Function for exporting JSON data
                         } label: {
